@@ -1,7 +1,7 @@
-import Message from './message';
-import { request } from './tools';
-import type { SubscriptionPostResponse, Subscriptions, Viewer } from './types';
-import { RequestOptions } from './types';
+import Message from './message.js';
+import { request } from './tools.js';
+import type { SubscriptionPostResponse, Subscriptions, Viewer } from './types.js';
+import { RequestOptions } from './types.js';
 
 export default class SubscriptionAPI {
     private readonly key: string;

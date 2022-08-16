@@ -1,6 +1,6 @@
-import SubscriptionAPI from './subscription-api';
-import ReadWriteAPI from './read-write-api';
-import LocalAPI from './local-api';
+import SubscriptionAPI from './subscription-api.js';
+import ReadWriteAPI from './read-write-api.js';
+import LocalAPI from './local-api.js';
 
 export const BOARD_LINE_LENGTH = 22;
 export const BOARD_LINES = 6;

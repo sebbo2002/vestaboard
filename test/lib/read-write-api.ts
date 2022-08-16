@@ -2,9 +2,9 @@
 
 import 'dotenv/config';
 import assert from 'assert';
-import ReadWriteAPI from '../../src/read-write-api';
-import { ReadWriteGetMessageResponse, RequestOptionsFetch } from '../../src/types';
-import Message from '../../src/message';
+import ReadWriteAPI from '../../src/read-write-api.js';
+import { ReadWriteGetMessageResponse, RequestOptionsFetch } from '../../src/types.js';
+import Message from '../../src/message.js';
 
 const RUN_INTEGRATION_TESTS = process.env.VESTABOARD_READ_WRITE_KEY;
 

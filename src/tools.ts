@@ -1,4 +1,4 @@
-import { RequestFetchOptions, RequestFetchResponse, RequestOptions } from './types';
+import { RequestFetchOptions, RequestFetchResponse, RequestOptions } from './types.js';
 import fetch from 'node-fetch';
 
 export async function request<T> (

@@ -1,5 +1,5 @@
-import { Boards } from './types';
-import Message from './message';
+import { Boards } from './types.js';
+import Message from './message.js';
 
 export default class MultipleBoards {
     private readonly boards: Boards;

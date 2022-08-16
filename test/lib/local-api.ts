@@ -2,9 +2,9 @@
 
 import 'dotenv/config';
 import assert from 'assert';
-import LocalAPI from '../../src/local-api';
-import Message from '../../src/message';
-import { RequestOptionsFetch } from '../../src/types';
+import LocalAPI from '../../src/local-api.js';
+import Message from '../../src/message.js';
+import { RequestOptionsFetch } from '../../src/types.js';
 
 const RUN_INTEGRATION_TESTS = process.env.VESTABOARD_LOCAL_KEY;
 

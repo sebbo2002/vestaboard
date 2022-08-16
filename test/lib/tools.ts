@@ -1,8 +1,8 @@
 'use strict';
 
 import assert from 'assert';
-import { RequestOptionsFetch } from '../../src/types';
-import { request } from '../../src/tools';
+import { RequestOptionsFetch } from '../../src/types.js';
+import { request } from '../../src/tools.js';
 
 describe('Tools', function () {
     this.timeout(30000);

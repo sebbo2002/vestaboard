@@ -1,6 +1,6 @@
-import Message from './message';
-import { request } from './tools';
-import type { ReadWriteGetMessageResponse, RequestOptions } from './types';
+import Message from './message.js';
+import { request } from './tools.js';
+import type { ReadWriteGetMessageResponse, RequestOptions } from './types.js';
 
 export default class ReadWriteAPI {
     private readonly key: string;

@@ -1,8 +1,8 @@
 'use strict';
 
-import Message, { CHAR_MAP } from '../../src/message';
-import { MessageWritePosition } from '../../src/types';
 import assert from 'assert';
+import Message, { CHAR_MAP } from '../../src/message.js';
+import { MessageWritePosition } from '../../src/types.js';
 
 describe('Message', function () {
     describe('constructor', function () {

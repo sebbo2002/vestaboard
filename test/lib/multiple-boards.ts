@@ -1,9 +1,9 @@
 'use strict';
 
 import 'dotenv/config';
-import LocalAPI from '../../src/local-api';
-import ReadWriteAPI from '../../src/read-write-api';
-import MultipleBoards from '../../src/multiple-boards';
+import LocalAPI from '../../src/local-api.js';
+import ReadWriteAPI from '../../src/read-write-api.js';
+import MultipleBoards from '../../src/multiple-boards.js';
 
 const RUN_INTEGRATION_TESTS = process.env.VESTABOARD_LOCAL_KEY && process.env.VESTABOARD_READ_WRITE_KEY;
 

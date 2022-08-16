@@ -1,6 +1,6 @@
-import Message from './message';
-import { request } from './tools';
-import type { BoardCharArray, RequestOptions } from './types';
+import Message from './message.js';
+import { request } from './tools.js';
+import type { BoardCharArray, RequestOptions } from './types.js';
 
 export default class LocalAPI {
     private readonly key: string;

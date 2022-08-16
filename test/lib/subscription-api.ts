@@ -2,9 +2,9 @@
 
 import 'dotenv/config';
 import assert from 'assert';
-import Message from '../../src/message';
-import SubscriptionAPI from '../../src/subscription-api';
-import { RequestOptionsFetch, Subscriptions, Viewer } from '../../src/types';
+import Message from '../../src/message.js';
+import SubscriptionAPI from '../../src/subscription-api.js';
+import { RequestOptionsFetch, Subscriptions, Viewer } from '../../src/types.js';
 
 const RUN_INTEGRATION_TESTS = process.env.VESTABOARD_SUBSCRIPTION_KEY && process.env.VESTABOARD_SUBSCRIPTION_SECRET;
 
