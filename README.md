@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://d.sebbo.net/vestaboard-client-logo-CHm68XZRkO67IrmfGjetZ2nEDl1JGjnT44OZlN6bbzljq4nnITRPW8AoBhWO6G29r6cd4PS1fyIiUCrbBJC2CnnG0GvZNzPLB6aA.png" alt="Logo" />
+    <img src="https://d.sebbo.net/vestaboard-client-logo-CHm68XZRk-zNNTOboqFhVFbeuN6ccZkBsvGQxAJPx5GCBbSI2GnbSse6ovApzaULciWRnoOTzOny70L7Rcpv0SIkOPGIwCC3ZDsJFNeH1A00lB.png" alt="Logo" />
 </p>
 
 # `@sebbo2002/vestaboard`
