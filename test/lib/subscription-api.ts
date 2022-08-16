@@ -1,7 +1,6 @@
 'use strict';
 
 import 'dotenv/config';
-import fetch from 'node-fetch';
 import assert from 'assert';
 import Message from '../../src/message';
 import SubscriptionAPI from '../../src/subscription-api';

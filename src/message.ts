@@ -283,7 +283,7 @@ export default class Message {
                 lines.push(currentLine);
             }
 
-                // word too long for one line, start in
+            // word too long for one line, start in
             // current line and continue in next line
             else {
                 if (charsLeft >= 3 && !currentLine.length) {
