@@ -1,3 +1,5 @@
+# [1.0.0-develop.2](https://github.com/sebbo2002/vestaboard/compare/v1.0.0-develop.1...v1.0.0-develop.2) (2022-08-22)
+
 # 1.0.0-develop.1 (2022-08-16)
 
 
