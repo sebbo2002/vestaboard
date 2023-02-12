@@ -1,3 +1,20 @@
+# [2.0.0-develop.1](https://github.com/sebbo2002/vestaboard/compare/v1.0.1...v2.0.0-develop.1) (2023-02-12)
+
+
+### Bug Fixes
+
+* Add .js extension ([adaa3d0](https://github.com/sebbo2002/vestaboard/commit/adaa3d01bea7a8844b7e8f0cae0b23f683ba6ae9))
+
+
+### Build System
+
+* Deprecate node.js 12 ([426588b](https://github.com/sebbo2002/vestaboard/commit/426588b4bb7bde2924bbc92006ca839e960872e1))
+
+
+### BREAKING CHANGES
+
+* From now on, only node.js ^14.8.0 || >=16.0.0 are supported
+
 ## [1.0.1](https://github.com/sebbo2002/vestaboard/compare/v1.0.0...v1.0.1) (2023-02-08)
 
 ## [1.0.1-develop.3](https://github.com/sebbo2002/vestaboard/compare/v1.0.1-develop.2...v1.0.1-develop.3) (2023-02-08)
