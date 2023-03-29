@@ -30,25 +30,31 @@
     "semantic-release-license": "^1.0.3",
     "source-map-support": "^0.5.21",
     "ts-node": "^10.9.1",
+    "tsup": "^6.7.0",
     "typedoc": "^0.23.24",
     "typescript": "^4.9.5"
   },
   "engines": {
     "node": "^14.8.0 || >=16.0.0"
   },
-  "exports": "./dist/index.js",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
   "files": [
     "/dist"
   ],
   "homepage": "https://github.com/sebbo2002/vestaboard#readme",
   "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "name": "@sebbo2002/vestaboard",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sebbo2002/vestaboard.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup && cp ./dist/index.d.ts ./dist/index.d.cts",
     "build-all": "./.github/workflows/build.sh",
     "coverage": "c8 mocha",
     "develop": "ts-node ./src/bin/start.ts",
