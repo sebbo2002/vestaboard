@@ -1,3 +1,10 @@
+# [2.0.0-develop.2](https://github.com/sebbo2002/vestaboard/compare/v2.0.0-develop.1...v2.0.0-develop.2) (2023-03-31)
+
+
+### Features
+
+* Use `import()` for `node-fetch` to allow cjs usage ([5f768c0](https://github.com/sebbo2002/vestaboard/commit/5f768c07084544c20ac54bdf03346f43117dbf77))
+
 # [2.0.0-develop.1](https://github.com/sebbo2002/vestaboard/compare/v1.0.1...v2.0.0-develop.1) (2023-02-12)
 
 
