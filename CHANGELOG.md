@@ -1,3 +1,25 @@
+# [2.0.0](https://github.com/sebbo2002/vestaboard/compare/v1.0.1...v2.0.0) (2023-03-31)
+
+
+### Bug Fixes
+
+* Add .js extension ([adaa3d0](https://github.com/sebbo2002/vestaboard/commit/adaa3d01bea7a8844b7e8f0cae0b23f683ba6ae9))
+
+
+### Build System
+
+* Deprecate node.js 12 ([426588b](https://github.com/sebbo2002/vestaboard/commit/426588b4bb7bde2924bbc92006ca839e960872e1))
+
+
+### Features
+
+* Use `import()` for `node-fetch` to allow cjs usage ([5f768c0](https://github.com/sebbo2002/vestaboard/commit/5f768c07084544c20ac54bdf03346f43117dbf77))
+
+
+### BREAKING CHANGES
+
+* From now on, only node.js ^14.8.0 || >=16.0.0 are supported
+
 # [2.0.0-develop.2](https://github.com/sebbo2002/vestaboard/compare/v2.0.0-develop.1...v2.0.0-develop.2) (2023-03-31)
 
 
