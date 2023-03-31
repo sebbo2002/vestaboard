@@ -1,5 +1,4 @@
 import { RequestFetchOptions, RequestFetchResponse, RequestOptions } from './types.js';
-import fetch from 'node-fetch';
 
 export async function request<T> (
     url: string,
@@ -27,7 +26,7 @@ export async function request<T> (
 
     let response: RequestFetchResponse | null = null;
     for (let i = 0; i < 10; i++) {
-        response = await (options.fetch || fetch)(url, init);
+        response = await (options.fetch || (await import('node-fetch')).default)(url, init);
         if(response.ok) {
             break;
         }

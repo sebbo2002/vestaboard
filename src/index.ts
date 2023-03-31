@@ -18,4 +18,4 @@ export {
     SubscriptionPostResponse,
     RequestOptions,
     Boards
-} from './types';
+} from './types.js';
