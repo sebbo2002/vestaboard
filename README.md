@@ -5,7 +5,7 @@
 # `@sebbo2002/vestaboard`
 
 [![MIT LICENSE](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/sebbo2002/vestaboard/blob/develop/LICENSE)
-[![CI Status](https://img.shields.io/github/workflow/status/sebbo2002/vestaboard/Test%20%26%20Release?style=flat-square)](https://github.com/sebbo2002/vestaboard/actions)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/sebbo2002/vestaboard/test-release.yml?style=flat-square)](https://github.com/sebbo2002/vestaboard/actions)
 
 <br />
 
