@@ -1,3 +1,17 @@
+# [3.0.0-develop.1](https://github.com/sebbo2002/vestaboard/compare/v2.0.1-develop.1...v3.0.0-develop.1) (2023-06-14)
+
+
+### Build System
+
+* Deprecate node.js v14 / v17 ([7a2de45](https://github.com/sebbo2002/vestaboard/commit/7a2de45c12f19a1ec441b3a004f4aa935efc197c))
+
+
+### BREAKING CHANGES
+
+* The node.js versions v14 and v17 are no longer maintained and are therefore no longer supported. See https://nodejs.dev/en/about/releases/ for more details on node.js release cycles.
+
+## [2.0.1-develop.1](https://github.com/sebbo2002/vestaboard/compare/v2.0.0...v2.0.1-develop.1) (2023-05-02)
+
 # [2.0.0](https://github.com/sebbo2002/vestaboard/compare/v1.0.1...v2.0.0) (2023-03-31)
 
 
