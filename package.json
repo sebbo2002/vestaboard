@@ -4,8 +4,7 @@
     "url": "https://github.com/sebbo2002/vestaboard/issues"
   },
   "dependencies": {
-    "grapheme-splitter": "^1.0.4",
-    "node-fetch": "^3.3.0"
+    "grapheme-splitter": "^1.0.4"
   },
   "description": "Just another client for the Vestaboard APIs.",
   "devDependencies": {
