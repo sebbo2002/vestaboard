@@ -26,7 +26,7 @@ export async function request<T> (
 
     let response: RequestFetchResponse | null = null;
     for (let i = 0; i < 10; i++) {
-        response = await (options.fetch || (await import('node-fetch')).default)(url, init);
+        response = await (options.fetch || fetch)(url, init);
         if(response.ok) {
             break;
         }
@@ -34,8 +34,7 @@ export async function request<T> (
         await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
-    /* c8 ignore next */
-    if(!response?.ok) {
+    if(!response.ok) {
         throw new Error('HTTP Request failed');
     }
 
