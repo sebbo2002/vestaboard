@@ -1,3 +1,15 @@
+# [3.1.0](https://github.com/sebbo2002/vestaboard/compare/v3.0.0...v3.1.0) (2024-01-07)
+
+
+### Features
+
+* Remove node-fetch dependency ([4d6911f](https://github.com/sebbo2002/vestaboard/commit/4d6911f5ab5b547d3932f307ab935e73e6ad5bcc))
+
+
+### Reverts
+
+* Revert "ci: Downgrade is-semantic-release till it's fixed" ([91c2ab5](https://github.com/sebbo2002/vestaboard/commit/91c2ab59d0559a060c11d07973382c465dd3345d))
+
 ## [3.0.1-develop.1](https://github.com/sebbo2002/vestaboard/compare/v3.0.0...v3.0.1-develop.1) (2023-08-23)
 
 # [3.0.0](https://github.com/sebbo2002/vestaboard/compare/v2.0.0...v3.0.0) (2023-06-14)
