@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="936" lines-covered="914" line-rate="0.9764" branches-valid="208" branches-covered="196" branch-rate="0.9423" timestamp="1686768705597" complexity="0" version="0.1">
+<coverage lines-valid="935" lines-covered="913" line-rate="0.9764" branches-valid="207" branches-covered="195" branch-rate="0.9420000000000001" timestamp="1704640880244" complexity="0" version="0.1">
   <sources>
     <source>/home/runner/work/vestaboard/vestaboard</source>
   </sources>
   <packages>
-    <package name="main" line-rate="0.9764" branch-rate="0.9423">
+    <package name="main" line-rate="0.9764" branch-rate="0.9420000000000001">
       <classes>
         <class name="local-api.ts" filename="src/local-api.ts" line-rate="1" branch-rate="0.75">
           <methods>
@@ -954,7 +954,7 @@
             <line number="64" hits="1" branch="false"/>
           </lines>
         </class>
-        <class name="tools.ts" filename="src/tools.ts" line-rate="1" branch-rate="0.9444">
+        <class name="tools.ts" filename="src/tools.ts" line-rate="1" branch-rate="0.9411">
           <methods>
             <method name="request" hits="12" signature="()V">
               <lines>
@@ -999,18 +999,17 @@
             <line number="34" hits="10" branch="true" condition-coverage="100% (1/1)"/>
             <line number="35" hits="10" branch="false"/>
             <line number="36" hits="21" branch="false"/>
-            <line number="37" hits="1" branch="false"/>
-            <line number="38" hits="1" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="37" hits="12" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="38" hits="1" branch="false"/>
             <line number="39" hits="1" branch="false"/>
-            <line number="40" hits="1" branch="false"/>
-            <line number="41" hits="11" branch="true" condition-coverage="100% (1/1)"/>
-            <line number="42" hits="12" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="40" hits="11" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="41" hits="12" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="42" hits="1" branch="false"/>
             <line number="43" hits="1" branch="false"/>
-            <line number="44" hits="1" branch="false"/>
-            <line number="45" hits="10" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="44" hits="10" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="45" hits="10" branch="false"/>
             <line number="46" hits="10" branch="false"/>
             <line number="47" hits="10" branch="false"/>
-            <line number="48" hits="10" branch="false"/>
           </lines>
         </class>
         <class name="types.ts" filename="src/types.ts" line-rate="1" branch-rate="1">
