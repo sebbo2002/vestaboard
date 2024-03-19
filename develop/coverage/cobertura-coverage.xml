@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="935" lines-covered="913" line-rate="0.9764" branches-valid="207" branches-covered="195" branch-rate="0.9420000000000001" timestamp="1709408555251" complexity="0" version="0.1">
+<coverage lines-valid="935" lines-covered="913" line-rate="0.9764" branches-valid="209" branches-covered="197" branch-rate="0.9425" timestamp="1710836671789" complexity="0" version="0.1">
   <sources>
     <source>/home/runner/work/vestaboard/vestaboard</source>
   </sources>
   <packages>
-    <package name="main" line-rate="0.9764" branch-rate="0.9420000000000001">
+    <package name="main" line-rate="0.9764" branch-rate="0.9425">
       <classes>
-        <class name="local-api.ts" filename="src/local-api.ts" line-rate="1" branch-rate="0.75">
+        <class name="local-api.ts" filename="src/local-api.ts" line-rate="1" branch-rate="0.7777">
           <methods>
             <method name="LocalAPI" hits="3" signature="()V">
               <lines>
@@ -46,7 +46,7 @@
             <line number="13" hits="3" branch="true" condition-coverage="0% (0/1)"/>
             <line number="14" hits="3" branch="false"/>
             <line number="15" hits="1" branch="false"/>
-            <line number="16" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="16" hits="1" branch="true" condition-coverage="100% (2/2)"/>
             <line number="17" hits="3" branch="false"/>
             <line number="18" hits="3" branch="false"/>
             <line number="19" hits="3" branch="false"/>
@@ -954,7 +954,7 @@
             <line number="64" hits="1" branch="false"/>
           </lines>
         </class>
-        <class name="tools.ts" filename="src/tools.ts" line-rate="1" branch-rate="0.9411">
+        <class name="tools.ts" filename="src/tools.ts" line-rate="1" branch-rate="0.9444">
           <methods>
             <method name="request" hits="12" signature="()V">
               <lines>
@@ -966,7 +966,7 @@
             <line number="1" hits="1" branch="false"/>
             <line number="2" hits="1" branch="false"/>
             <line number="3" hits="1" branch="true" condition-coverage="100% (1/1)"/>
-            <line number="4" hits="12" branch="false"/>
+            <line number="4" hits="12" branch="true" condition-coverage="100% (1/1)"/>
             <line number="5" hits="12" branch="false"/>
             <line number="6" hits="12" branch="false"/>
             <line number="7" hits="12" branch="false"/>
