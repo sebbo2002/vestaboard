@@ -34,7 +34,7 @@ export async function request<T> (
         await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
-    if(!response.ok) {
+    if(!response?.ok) {
         throw new Error('HTTP Request failed');
     }
 
