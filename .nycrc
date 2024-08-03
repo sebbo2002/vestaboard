@@ -1,15 +1,15 @@
 {
     "cache": false,
-    "check-coverage": true,
     "extension": [
         ".ts"
     ],
     "include": [
-        "src/lib/*.ts"
+        "src/*.ts"
     ],
     "exclude": [
         "coverage/**",
-        "node_modules/**"
+        "node_modules/**",
+        "src/index.ts"
     ],
     "report-dir": "./docs/coverage/",
     "temp-directory": "./.nyc_output",
