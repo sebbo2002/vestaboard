@@ -1,5 +1,11 @@
 import GraphemeSplitter from 'grapheme-splitter';
-import { BOARD_LINE_LENGTH, BOARD_LINES, BoardCharArray, MessageWriteOptions, MessageWritePosition } from './types.js';
+import {
+    BOARD_LINES,
+    BOARD_LINE_LENGTH,
+    MessageWritePosition,
+    type BoardCharArray,
+    type MessageWriteOptions,
+} from './types.js';
 
 
 /**
