@@ -1,4 +1,4 @@
-import { Boards } from './types.js';
+import { type Boards } from './types.js';
 import Message from './message.js';
 
 export default class MultipleBoards {
