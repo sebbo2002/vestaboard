@@ -1,3 +1,22 @@
+# [4.0.0](https://github.com/sebbo2002/vestaboard/compare/v3.1.0...v4.0.0) (2024-08-26)
+
+
+### chore
+
+* Drop support for node.js v19 and v21 ([2fff079](https://github.com/sebbo2002/vestaboard/commit/2fff079040a377fbe9ecc340388f6a29b863cf80))
+
+
+### Features
+
+* **Message:** Add more auto-replaced characters ([9495ba4](https://github.com/sebbo2002/vestaboard/commit/9495ba41331f97de4fe623756d5a8ea090260ddc))
+
+
+### BREAKING CHANGES
+
+* Drop node.js v21 Support
+
+These node.js versions are no longer supported. For more information see https://nodejs.dev/en/about/releases/
+
 # [3.1.0](https://github.com/sebbo2002/vestaboard/compare/v3.0.0...v3.1.0) (2024-01-07)
 
 
