@@ -5,8 +5,8 @@
     "passes": 50,
     "pending": 8,
     "failures": 0,
-    "start": "2024-11-28T19:05:41.120Z",
-    "end": "2024-11-28T19:05:51.208Z",
+    "start": "2025-01-09T16:49:50.211Z",
+    "end": "2025-01-09T16:50:00.299Z",
     "duration": 10088,
     "testsRegistered": 58,
     "passPercent": 100,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "dfa2d0df-31a4-4aef-8540-b694539af94e",
+      "uuid": "fba24f9b-3977-431a-b7e3-12691d73ff61",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "478e6ba9-fb4f-4af2-9500-b8941055160c",
+          "uuid": "695632e1-6ef2-45e7-9925-23d4d4bb456a",
           "title": "LocalAPI",
           "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/local-api.ts",
           "file": "/test/lib/local-api.ts",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "07b5a6b9-e71b-47ff-a8db-25bd04f70b36",
+              "uuid": "336f7a85-3be7-43f3-8ad5-2482947dc837",
               "title": "getCurrentMessage()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/local-api.ts",
               "file": "/test/lib/local-api.ts",
@@ -47,7 +47,7 @@
                   "title": "should work (mocked by device)",
                   "fullTitle": "LocalAPI getCurrentMessage() should work (mocked by device)",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 3,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -56,8 +56,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\");const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"http://vestaboard.local:7000/local-api/message\");assert.deepStrictEqual(options,{method:\"GET\",headers:{\"X-Vestaboard-Local-Api-Key\":\"3eadf7a8-6602-4bf5-92f4-970d36066958\"}});return{ok:true,status:200,statusText:\"OK\",json:__name(async()=>({message:msg.toCharArray()}),\"json\")}},\"fetch\");const api=new LocalAPI(\"3eadf7a8-6602-4bf5-92f4-970d36066958\",void 0,{fetch});const result=await api.getCurrentMessage();assert.deepStrictEqual(result.toCharArray(),msg.toCharArray())",
                   "err": {},
-                  "uuid": "285ec30f-e379-43bd-bc04-8eae9f9d1a14",
-                  "parentUUID": "07b5a6b9-e71b-47ff-a8db-25bd04f70b36",
+                  "uuid": "41f0c2d9-fc5e-4a99-8f1e-ba301403dde5",
+                  "parentUUID": "336f7a85-3be7-43f3-8ad5-2482947dc837",
                   "isHook": false,
                   "skipped": false
                 },
@@ -74,8 +74,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\");const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"http://vestaboard.local:7000/local-api/message\");assert.deepStrictEqual(options,{method:\"GET\",headers:{\"X-Vestaboard-Local-Api-Key\":\"3eadf7a8-6602-4bf5-92f4-970d36066958\"}});return{ok:true,status:200,statusText:\"OK\",json:__name(async()=>msg.toCharArray(),\"json\")}},\"fetch\");const api=new LocalAPI(\"3eadf7a8-6602-4bf5-92f4-970d36066958\",void 0,{fetch});const result=await api.getCurrentMessage();assert.deepStrictEqual(result.toCharArray(),msg.toCharArray())",
                   "err": {},
-                  "uuid": "9cc176ff-f488-4fc4-aede-bd3911df1050",
-                  "parentUUID": "07b5a6b9-e71b-47ff-a8db-25bd04f70b36",
+                  "uuid": "e6a453c7-23dc-47a5-9b94-acb7bc2e0983",
+                  "parentUUID": "336f7a85-3be7-43f3-8ad5-2482947dc837",
                   "isHook": false,
                   "skipped": false
                 },
@@ -92,29 +92,29 @@
                   "context": null,
                   "code": "",
                   "err": {},
-                  "uuid": "91565273-96b6-4956-b990-27a38589da4a",
-                  "parentUUID": "07b5a6b9-e71b-47ff-a8db-25bd04f70b36",
+                  "uuid": "4e7a6da8-6d73-4408-8065-84623efdeaa6",
+                  "parentUUID": "336f7a85-3be7-43f3-8ad5-2482947dc837",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "285ec30f-e379-43bd-bc04-8eae9f9d1a14",
-                "9cc176ff-f488-4fc4-aede-bd3911df1050"
+                "41f0c2d9-fc5e-4a99-8f1e-ba301403dde5",
+                "e6a453c7-23dc-47a5-9b94-acb7bc2e0983"
               ],
               "failures": [],
               "pending": [
-                "91565273-96b6-4956-b990-27a38589da4a"
+                "4e7a6da8-6d73-4408-8065-84623efdeaa6"
               ],
               "skipped": [],
-              "duration": 3,
+              "duration": 4,
               "root": false,
               "rootEmpty": false,
               "_timeout": 30000
             },
             {
-              "uuid": "66f615d4-c04a-4182-9f35-4a5513ea3fb9",
+              "uuid": "6f2f18c3-5706-4e7e-8d05-07a3dcee801e",
               "title": "postMessage()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/local-api.ts",
               "file": "/test/lib/local-api.ts",
@@ -134,8 +134,8 @@
                   "context": null,
                   "code": "const msg=new Message(\"Hello World\");const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"http://vestaboard.local:7000/local-api/message\");assert.deepStrictEqual(options,{method:\"POST\",headers:{\"Content-Type\":\"application/json\",\"X-Vestaboard-Local-Api-Key\":\"3eadf7a8-6602-4bf5-92f4-970d36066958\"},body:JSON.stringify(msg.toCharArray())});return{ok:true,status:201,statusText:\"CREATED\",json:__name(async()=>\"\",\"json\")}},\"fetch\");const api=new LocalAPI(\"3eadf7a8-6602-4bf5-92f4-970d36066958\",void 0,{fetch});await api.postMessage(\"Hello World\")",
                   "err": {},
-                  "uuid": "cd3db90c-0c21-4785-971d-cd2fcb507746",
-                  "parentUUID": "66f615d4-c04a-4182-9f35-4a5513ea3fb9",
+                  "uuid": "2f23a4bb-a130-424b-bbba-c1e80adcfbdd",
+                  "parentUUID": "6f2f18c3-5706-4e7e-8d05-07a3dcee801e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -152,19 +152,19 @@
                   "context": null,
                   "code": "",
                   "err": {},
-                  "uuid": "dc749cfb-0571-4e29-8753-3815e8e099b2",
-                  "parentUUID": "66f615d4-c04a-4182-9f35-4a5513ea3fb9",
+                  "uuid": "57cb0e09-4023-419f-85d9-1fa6a62bfffa",
+                  "parentUUID": "6f2f18c3-5706-4e7e-8d05-07a3dcee801e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "cd3db90c-0c21-4785-971d-cd2fcb507746"
+                "2f23a4bb-a130-424b-bbba-c1e80adcfbdd"
               ],
               "failures": [],
               "pending": [
-                "dc749cfb-0571-4e29-8753-3815e8e099b2"
+                "57cb0e09-4023-419f-85d9-1fa6a62bfffa"
               ],
               "skipped": [],
               "duration": 1,
@@ -183,7 +183,7 @@
           "_timeout": 30000
         },
         {
-          "uuid": "1416c2b2-8542-421a-a622-3ced012c4db8",
+          "uuid": "66a96c23-1875-4d23-8aa1-72b13546fbd9",
           "title": "Message",
           "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
           "file": "/test/lib/message.ts",
@@ -192,7 +192,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "8f1ee866-d1d3-4a36-aee6-871f810289c1",
+              "uuid": "90f6527e-514d-4576-882f-52cd3e613aad",
               "title": "constructor",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
               "file": "/test/lib/message.ts",
@@ -212,8 +212,8 @@
                   "context": null,
                   "code": "assert.strictEqual(new Message(\"Hello World\").toString(),\"#==============================================#\\n#                                              #\\n#                                              #\\n#           H E L L O   W O R L D              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "66dd3a17-5116-43ab-85f1-07570f00f8af",
-                  "parentUUID": "8f1ee866-d1d3-4a36-aee6-871f810289c1",
+                  "uuid": "e9192010-6e46-4956-9c9c-c2862e624602",
+                  "parentUUID": "90f6527e-514d-4576-882f-52cd3e613aad",
                   "isHook": false,
                   "skipped": false
                 },
@@ -221,7 +221,7 @@
                   "title": "should also support a char array",
                   "fullTitle": "Message constructor should also support a char array",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -230,27 +230,27 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA} \");assert.deepStrictEqual(new Message(msg.toCharArray()).toCharArray(),msg.toCharArray())",
                   "err": {},
-                  "uuid": "f6837cb7-7590-49d0-bb67-0691747a2a02",
-                  "parentUUID": "8f1ee866-d1d3-4a36-aee6-871f810289c1",
+                  "uuid": "1734dbd7-3ce4-48ed-8262-85a12cd14c68",
+                  "parentUUID": "90f6527e-514d-4576-882f-52cd3e613aad",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "66dd3a17-5116-43ab-85f1-07570f00f8af",
-                "f6837cb7-7590-49d0-bb67-0691747a2a02"
+                "e9192010-6e46-4956-9c9c-c2862e624602",
+                "1734dbd7-3ce4-48ed-8262-85a12cd14c68"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "500b04f0-972c-46ad-bb0d-86de90720554",
+              "uuid": "3c11c5d6-c3e9-4a08-8f2a-94559a4f31be",
               "title": "static string2chars()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
               "file": "/test/lib/message.ts",
@@ -261,7 +261,7 @@
                   "title": "should work",
                   "fullTitle": "Message static string2chars() should work",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -270,8 +270,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.string2chars(\"Hello\"),[8,5,12,12,15])",
                   "err": {},
-                  "uuid": "8e894f9a-aecb-41e0-bdc0-265b6b0a9fc3",
-                  "parentUUID": "500b04f0-972c-46ad-bb0d-86de90720554",
+                  "uuid": "a9e013dc-d592-44ac-8c91-83d6066db290",
+                  "parentUUID": "3c11c5d6-c3e9-4a08-8f2a-94559a4f31be",
                   "isHook": false,
                   "skipped": false
                 },
@@ -288,8 +288,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.string2chars(\"K\\xE4se\"),[11,1,5,19,5])",
                   "err": {},
-                  "uuid": "f0132413-db8c-4ae3-9fc3-7e9f07658455",
-                  "parentUUID": "500b04f0-972c-46ad-bb0d-86de90720554",
+                  "uuid": "8195a698-731d-4913-a7cf-aec7ae943642",
+                  "parentUUID": "3c11c5d6-c3e9-4a08-8f2a-94559a4f31be",
                   "isHook": false,
                   "skipped": false
                 },
@@ -306,8 +306,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.string2chars(\"\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u2B1C\\u2B1B\"),[63,64,65,66,67,68,69,0])",
                   "err": {},
-                  "uuid": "595938da-7742-4193-b046-a46ff4279012",
-                  "parentUUID": "500b04f0-972c-46ad-bb0d-86de90720554",
+                  "uuid": "30a4dd42-4c15-412b-9c63-a44a1f41462e",
+                  "parentUUID": "3c11c5d6-c3e9-4a08-8f2a-94559a4f31be",
                   "isHook": false,
                   "skipped": false
                 },
@@ -324,8 +324,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.string2chars(\"H\\u2377llo\",{fallbackChar:null}),[8,12,12,15]);assert.deepStrictEqual(Message.string2chars(\"H\\u2377llo\"),[8,60,12,12,15])",
                   "err": {},
-                  "uuid": "ab06db95-b4bb-4675-a42b-de86037badfa",
-                  "parentUUID": "500b04f0-972c-46ad-bb0d-86de90720554",
+                  "uuid": "f149fb3b-3ede-4cba-8c9c-f6de72a30776",
+                  "parentUUID": "3c11c5d6-c3e9-4a08-8f2a-94559a4f31be",
                   "isHook": false,
                   "skipped": false
                 },
@@ -333,7 +333,7 @@
                   "title": "should work with all charts defined in CHAR_MAP",
                   "fullTitle": "Message static string2chars() should work with all charts defined in CHAR_MAP",
                   "timedOut": false,
-                  "duration": 6,
+                  "duration": 7,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -342,30 +342,30 @@
                   "context": null,
                   "code": "let text=\"\";const result=[];CHAR_MAP.forEach(([str,chars])=>{const actual=Message.string2chars(str,{removeUnsupportedWords:false});const expected=chars.length!==1||chars[0]!==-2?chars:[0];assert.deepStrictEqual(actual,expected,`Unable to process char \"${str}\": string2chars returned ${JSON.stringify(actual)}, but expected result was ${JSON.stringify(expected)}`);text+=str;result.push(...expected)});assert.deepStrictEqual(Message.string2chars(text,{removeUnsupportedWords:false}),result)",
                   "err": {},
-                  "uuid": "36c26e84-c100-4106-83fc-fd1b646a00e6",
-                  "parentUUID": "500b04f0-972c-46ad-bb0d-86de90720554",
+                  "uuid": "746478d4-d5a5-40d6-964f-30dd2908fc24",
+                  "parentUUID": "3c11c5d6-c3e9-4a08-8f2a-94559a4f31be",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "8e894f9a-aecb-41e0-bdc0-265b6b0a9fc3",
-                "f0132413-db8c-4ae3-9fc3-7e9f07658455",
-                "595938da-7742-4193-b046-a46ff4279012",
-                "ab06db95-b4bb-4675-a42b-de86037badfa",
-                "36c26e84-c100-4106-83fc-fd1b646a00e6"
+                "a9e013dc-d592-44ac-8c91-83d6066db290",
+                "8195a698-731d-4913-a7cf-aec7ae943642",
+                "30a4dd42-4c15-412b-9c63-a44a1f41462e",
+                "f149fb3b-3ede-4cba-8c9c-f6de72a30776",
+                "746478d4-d5a5-40d6-964f-30dd2908fc24"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 7,
+              "duration": 9,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "098eabd7-eed4-438e-a7a5-01668afd7abf",
+              "uuid": "5eccb7ae-f281-43d0-8476-bb0937bfe033",
               "title": "static splitCharsIntoLines()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
               "file": "/test/lib/message.ts",
@@ -385,8 +385,8 @@
                   "context": null,
                   "code": "const chars=Message.string2chars(\"Hello World\");assert.deepEqual(Message.splitCharsIntoLines(chars,[22,22]),[[8,5,12,12,15,0,23,15,18,12,4]]);assert.deepEqual(Message.splitCharsIntoLines(chars,[8,8]),[[8,5,12,12,15],[23,15,18,12,4]])",
                   "err": {},
-                  "uuid": "f27a5f96-b64b-457b-a15b-8ac67e51726d",
-                  "parentUUID": "098eabd7-eed4-438e-a7a5-01668afd7abf",
+                  "uuid": "3347edc6-d579-42d2-8720-6f493998f751",
+                  "parentUUID": "5eccb7ae-f281-43d0-8476-bb0937bfe033",
                   "isHook": false,
                   "skipped": false
                 },
@@ -403,8 +403,8 @@
                   "context": null,
                   "code": "const chars=Message.string2chars(\"Hello-World\");assert.deepEqual(Message.splitCharsIntoLines(chars,[22,22]),[[8,5,12,12,15,44,23,15,18,12,4]]);assert.deepEqual(Message.splitCharsIntoLines(chars,[8,8]),[[8,5,12,12,15,44],[23,15,18,12,4]])",
                   "err": {},
-                  "uuid": "566375fc-125e-4224-b5de-85f8e8a2ae35",
-                  "parentUUID": "098eabd7-eed4-438e-a7a5-01668afd7abf",
+                  "uuid": "f3079877-a047-4591-9221-10ad3f4cf71a",
+                  "parentUUID": "5eccb7ae-f281-43d0-8476-bb0937bfe033",
                   "isHook": false,
                   "skipped": false
                 },
@@ -421,17 +421,17 @@
                   "context": null,
                   "code": "const chars=Message.string2chars(\"Rindfleischetikettierungsueberwachungsaufgabenuebertragungsgesetz\");assert.deepEqual(Message.splitCharsIntoLines(chars,[22,22]),[[18,9,14,4,6,12,5,9,19,3,8,5,20,9,11,5,20,20,9,5,18,44],[21,14,7,19,21,5,2,5,18,23,1,3,8,21,14,7,19,1,21,6,7,44],[1,2,5,14,21,5,2,5,18,20,18,1,7,21,14,7,19,7,5,19,5,44],[20,26]])",
                   "err": {},
-                  "uuid": "ed0d7193-313c-4760-b85a-c88bfb6161eb",
-                  "parentUUID": "098eabd7-eed4-438e-a7a5-01668afd7abf",
+                  "uuid": "321a8183-49a1-4c5f-8a60-3d64443054d8",
+                  "parentUUID": "5eccb7ae-f281-43d0-8476-bb0937bfe033",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f27a5f96-b64b-457b-a15b-8ac67e51726d",
-                "566375fc-125e-4224-b5de-85f8e8a2ae35",
-                "ed0d7193-313c-4760-b85a-c88bfb6161eb"
+                "3347edc6-d579-42d2-8720-6f493998f751",
+                "f3079877-a047-4591-9221-10ad3f4cf71a",
+                "321a8183-49a1-4c5f-8a60-3d64443054d8"
               ],
               "failures": [],
               "pending": [],
@@ -442,7 +442,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "1bc0f01f-79dc-434b-b201-2cda093862d8",
+              "uuid": "cbb352d7-610c-44b2-9ff4-967faed631b1",
               "title": "static removeEmojisFromChars()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
               "file": "/test/lib/message.ts",
@@ -462,8 +462,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.string2chars(\"Hello World\"),[8,5,12,12,15,0,23,15,18,12,4])",
                   "err": {},
-                  "uuid": "a9c552d6-b11b-465e-b803-a19ba8818e70",
-                  "parentUUID": "1bc0f01f-79dc-434b-b201-2cda093862d8",
+                  "uuid": "6a275b3e-11f5-4020-9312-f98fd67af836",
+                  "parentUUID": "cbb352d7-610c-44b2-9ff4-967faed631b1",
                   "isHook": false,
                   "skipped": false
                 },
@@ -480,8 +480,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.removeEmojisFromChars(Message.string2chars(\"\\u{1F44B}\\u{1F3FC}Hello\")),[8,5,12,12,15]);assert.deepStrictEqual(Message.removeEmojisFromChars(Message.string2chars(\"\\u{1F44B}\\u{1F3FC} Hello\")),[8,5,12,12,15])",
                   "err": {},
-                  "uuid": "13a5fbda-4668-47db-afce-95bbe4e28a18",
-                  "parentUUID": "1bc0f01f-79dc-434b-b201-2cda093862d8",
+                  "uuid": "7f446cf8-0eb7-4b46-a137-eac7f5bc6640",
+                  "parentUUID": "cbb352d7-610c-44b2-9ff4-967faed631b1",
                   "isHook": false,
                   "skipped": false
                 },
@@ -489,7 +489,7 @@
                   "title": "should trim emoji postfixes",
                   "fullTitle": "Message static removeEmojisFromChars() should trim emoji postfixes",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -498,8 +498,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.removeEmojisFromChars(Message.string2chars(\"Hello\\u{1F44B}\\u{1F3FC}\")),[8,5,12,12,15]);assert.deepStrictEqual(Message.removeEmojisFromChars(Message.string2chars(\"Hello \\u{1F44B}\\u{1F3FC}\")),[8,5,12,12,15])",
                   "err": {},
-                  "uuid": "2121a9a7-6c18-4f6a-8dd2-39668ef1ab4d",
-                  "parentUUID": "1bc0f01f-79dc-434b-b201-2cda093862d8",
+                  "uuid": "668ccf94-ec76-4069-b8f0-fae03db5d2d1",
+                  "parentUUID": "cbb352d7-610c-44b2-9ff4-967faed631b1",
                   "isHook": false,
                   "skipped": false
                 },
@@ -516,29 +516,29 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.removeEmojisFromChars(Message.string2chars(\"Hello \\u{1F44B}\\u{1F3FC}\\u{1F44B}\\u{1F3FC} World\")),[8,5,12,12,15,0,23,15,18,12,4])",
                   "err": {},
-                  "uuid": "1449d549-8ecf-4fd4-b083-2585298ba6aa",
-                  "parentUUID": "1bc0f01f-79dc-434b-b201-2cda093862d8",
+                  "uuid": "64d345dc-310c-4f82-9158-93d7772370e7",
+                  "parentUUID": "cbb352d7-610c-44b2-9ff4-967faed631b1",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "a9c552d6-b11b-465e-b803-a19ba8818e70",
-                "13a5fbda-4668-47db-afce-95bbe4e28a18",
-                "2121a9a7-6c18-4f6a-8dd2-39668ef1ab4d",
-                "1449d549-8ecf-4fd4-b083-2585298ba6aa"
+                "6a275b3e-11f5-4020-9312-f98fd67af836",
+                "7f446cf8-0eb7-4b46-a137-eac7f5bc6640",
+                "668ccf94-ec76-4069-b8f0-fae03db5d2d1",
+                "64d345dc-310c-4f82-9158-93d7772370e7"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "a57d09a7-b13b-42d3-870e-45a1051553fe",
+              "uuid": "f42d3f42-c0ca-4ebd-8ef7-dff02ac49fd9",
               "title": "static getColumnSizesFromData()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
               "file": "/test/lib/message.ts",
@@ -558,8 +558,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.getColumnSizesFromData([[\"now\",\"Daily\"],[\"13:00\",\"Secret Meeting\"]]),[6,15])",
                   "err": {},
-                  "uuid": "96481d5d-f656-4c4b-84af-54d0d2e57ec3",
-                  "parentUUID": "a57d09a7-b13b-42d3-870e-45a1051553fe",
+                  "uuid": "ee6bb9bb-26ca-4efb-a7c3-4539d43557c3",
+                  "parentUUID": "f42d3f42-c0ca-4ebd-8ef7-dff02ac49fd9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -576,8 +576,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.getColumnSizesFromData([]),[])",
                   "err": {},
-                  "uuid": "0ac487ba-178b-4df0-8069-2547e5784460",
-                  "parentUUID": "a57d09a7-b13b-42d3-870e-45a1051553fe",
+                  "uuid": "41a1ea1f-eb06-4ad3-b714-dab616de7900",
+                  "parentUUID": "f42d3f42-c0ca-4ebd-8ef7-dff02ac49fd9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -585,7 +585,7 @@
                   "title": "should work with only one column",
                   "fullTitle": "Message static getColumnSizesFromData() should work with only one column",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -594,8 +594,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.getColumnSizesFromData([[\"Daily\"],[\"Secret Meeting\"]]),[22])",
                   "err": {},
-                  "uuid": "1ce3c4fe-ce1c-4cf7-93e6-108eaca692c2",
-                  "parentUUID": "a57d09a7-b13b-42d3-870e-45a1051553fe",
+                  "uuid": "5912264f-1cd6-4db3-9139-001ea5a8e3cb",
+                  "parentUUID": "f42d3f42-c0ca-4ebd-8ef7-dff02ac49fd9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -612,8 +612,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(Message.getColumnSizesFromData([[\"now\",\"Daily\"],[\"13:00\",\"Super Secret Meeting\"]]),[5,16])",
                   "err": {},
-                  "uuid": "708c1530-ae93-4170-93c8-4725f1dda2bc",
-                  "parentUUID": "a57d09a7-b13b-42d3-870e-45a1051553fe",
+                  "uuid": "bce3e6b2-5d02-4d6a-9c81-27dd0fa72034",
+                  "parentUUID": "f42d3f42-c0ca-4ebd-8ef7-dff02ac49fd9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -621,7 +621,7 @@
                   "title": "should throw error if rows have different number of columns",
                   "fullTitle": "Message static getColumnSizesFromData() should throw error if rows have different number of columns",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -630,19 +630,19 @@
                   "context": null,
                   "code": "assert.throws(()=>{new Message().table([[\"now\",\"Daily\"],[\"13:00\",\"Secret Meeting\",\"\\u{1F7E5}\"]])},/Unable to render table: Row 1 has 3 entries, but first row has 2!/)",
                   "err": {},
-                  "uuid": "a7c147ca-4307-4e57-932b-c9962c29a28c",
-                  "parentUUID": "a57d09a7-b13b-42d3-870e-45a1051553fe",
+                  "uuid": "fe5a4ad1-4b15-42c5-b157-897a1218bf39",
+                  "parentUUID": "f42d3f42-c0ca-4ebd-8ef7-dff02ac49fd9",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "96481d5d-f656-4c4b-84af-54d0d2e57ec3",
-                "0ac487ba-178b-4df0-8069-2547e5784460",
-                "1ce3c4fe-ce1c-4cf7-93e6-108eaca692c2",
-                "708c1530-ae93-4170-93c8-4725f1dda2bc",
-                "a7c147ca-4307-4e57-932b-c9962c29a28c"
+                "ee6bb9bb-26ca-4efb-a7c3-4539d43557c3",
+                "41a1ea1f-eb06-4ad3-b714-dab616de7900",
+                "5912264f-1cd6-4db3-9139-001ea5a8e3cb",
+                "bce3e6b2-5d02-4d6a-9c81-27dd0fa72034",
+                "fe5a4ad1-4b15-42c5-b157-897a1218bf39"
               ],
               "failures": [],
               "pending": [],
@@ -653,7 +653,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "097296ac-76f9-45c8-822e-3c2cbf69e481",
+              "uuid": "d8ce7a38-e05c-4022-a770-acecbc7c71d4",
               "title": "fill()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
               "file": "/test/lib/message.ts",
@@ -673,8 +673,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Hello World\");msg.fill();assert.strictEqual(msg.toString(),\"#==============================================#\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "81c20ce1-14d8-4f93-a7ae-64234e045a2c",
-                  "parentUUID": "097296ac-76f9-45c8-822e-3c2cbf69e481",
+                  "uuid": "8fedddc4-73d4-41e3-b10b-c2b2caf12e21",
+                  "parentUUID": "d8ce7a38-e05c-4022-a770-acecbc7c71d4",
                   "isHook": false,
                   "skipped": false
                 },
@@ -691,8 +691,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\");assert.strictEqual(msg.toString(),\"#==============================================#\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "cc22673e-594a-43cd-849d-1a2785125c5f",
-                  "parentUUID": "097296ac-76f9-45c8-822e-3c2cbf69e481",
+                  "uuid": "eef12a08-21da-427f-99d7-82493572baf9",
+                  "parentUUID": "d8ce7a38-e05c-4022-a770-acecbc7c71d4",
                   "isHook": false,
                   "skipped": false
                 },
@@ -709,17 +709,17 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\");assert.strictEqual(msg.toString(),\"#==============================================#\\n# \\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9} #\\n# \\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7} #\\n# \\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA} #\\n# \\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9} #\\n# \\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7} #\\n# \\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA} #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "acc0ca7e-dd58-4176-b806-d2de6f0888c8",
-                  "parentUUID": "097296ac-76f9-45c8-822e-3c2cbf69e481",
+                  "uuid": "afcf905d-3240-42a1-a35b-abdf8ca47b37",
+                  "parentUUID": "d8ce7a38-e05c-4022-a770-acecbc7c71d4",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "81c20ce1-14d8-4f93-a7ae-64234e045a2c",
-                "cc22673e-594a-43cd-849d-1a2785125c5f",
-                "acc0ca7e-dd58-4176-b806-d2de6f0888c8"
+                "8fedddc4-73d4-41e3-b10b-c2b2caf12e21",
+                "eef12a08-21da-427f-99d7-82493572baf9",
+                "afcf905d-3240-42a1-a35b-abdf8ca47b37"
               ],
               "failures": [],
               "pending": [],
@@ -730,7 +730,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+              "uuid": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
               "title": "write()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
               "file": "/test/lib/message.ts",
@@ -741,7 +741,7 @@
                   "title": "should start writing from top/left",
                   "fullTitle": "Message write() should start writing from top/left",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -750,8 +750,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Hello World\");assert.strictEqual(msg.toString(),\"#==============================================#\\n# H E L L O   W O R L D                        #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "7d2eb9d0-9351-41eb-b814-031b319abbcb",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "7452fbda-691f-4105-bd16-2b3010bd669d",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 },
@@ -768,8 +768,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Hello World\",{position:{line:2,row:5}});assert.strictEqual(msg.toString(),\"#==============================================#\\n#                                              #\\n#                                              #\\n#           H E L L O   W O R L D              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "93890285-de8d-4cb0-ad35-715cd0b66d50",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "0629597f-ab9c-463e-b6da-f5174216b419",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 },
@@ -777,7 +777,7 @@
                   "title": "should add another line if text is too long",
                   "fullTitle": "Message write() should add another line if text is too long",
                   "timedOut": false,
-                  "duration": 4,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -786,8 +786,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt\");assert.strictEqual(msg.toString(),\"#==============================================#\\n# L O R E M   I P S U M   D O L O R   S I T    #\\n# A M E T ,   C O N S E T E T U R              #\\n# S A D I P S C I N G   E L I T R ,   S E D    #\\n# D I A M   N O N U M Y   E I R M O D          #\\n# T E M P O R   I N V I D U N T                #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "5463610e-289d-4233-ab33-905c1e1b2910",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "572ff6ec-7187-4c50-8ad3-916f42817285",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 },
@@ -795,7 +795,7 @@
                   "title": "should work with words > board length",
                   "fullTitle": "Message write() should work with words > board length",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -804,8 +804,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Lorem-ipsum-dolor-sit-amet\");assert.strictEqual(msg.toString(),\"#==============================================#\\n# L O R E M - I P S U M - D O L O R - S I T -  #\\n# A M E T                                      #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "278ef8d9-3886-4eed-8ded-eadf618ffbab",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "36206a9d-eed4-43c4-b64d-8c590998793e",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 },
@@ -822,8 +822,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"13:00\",{position:MessageWritePosition.NEXT_LINE});msg.write(\"Daily\",{indent:true});msg.write(\"\",{position:MessageWritePosition.NEXT_LINE});msg.write(\"18:00\",{position:MessageWritePosition.NEXT_LINE});msg.write(\"Fischst\\xE4bchen, Spinat & Ei\",{indent:true});msg.write(\"\",{position:MessageWritePosition.NEXT_LINE});msg.write(\"20:00\",{position:MessageWritePosition.NEXT_LINE});msg.write(\"Sandm\\xE4nnchen\",{indent:true});assert.strictEqual(msg.toString(),\"#==============================================#\\n# 1 3 : 0 0   D A I L Y                        #\\n#                                              #\\n# 1 8 : 0 0   F I S C H S T A E B C H E N ,    #\\n#             S P I N A T   &   E I            #\\n#                                              #\\n# 2 0 : 0 0   S A N D M A E N N C H E N        #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "6a21c60a-d16a-45b7-9b7f-def55e16ceaa",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "e9d60f0d-7208-47e9-923f-8ebebeb2e65d",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 },
@@ -840,8 +840,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Rindfleisch\").write(\"etikettierungs\",{position:MessageWritePosition.NO_SPACE_BETWEEN}).write(\"ueberwachungs\",{position:MessageWritePosition.NO_SPACE_BETWEEN}).write(\"aufgaben\",{position:MessageWritePosition.NO_SPACE_BETWEEN}).write(\"uebertragungs\",{position:MessageWritePosition.NO_SPACE_BETWEEN}).write(\"gesetz\",{position:MessageWritePosition.NO_SPACE_BETWEEN}).write(\"(das)\");assert.strictEqual(msg.toString(),\"#==============================================#\\n# R I N D F L E I S C H                        #\\n# E T I K E T T I E R U N G S                  #\\n# U E B E R W A C H U N G S A U F G A B E N    #\\n# U E B E R T R A G U N G S G E S E T Z        #\\n# ( D A S )                                    #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "9a2eb178-b03c-4cb2-bccc-7b2d9f5ef5b4",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "02d7cdca-40a9-44bf-9418-dd1aa7e9adde",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 },
@@ -858,8 +858,8 @@
                   "context": null,
                   "code": "assert.strictEqual(new Message().write(\"Hello\\nWorld\").toString(),\"#==============================================#\\n# H E L L O                                    #\\n# W O R L D                                    #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\");assert.strictEqual(new Message().write(\"H\\u2377llo World\",{fallbackChar:0}).toString(),\"#==============================================#\\n# H   L L O   W O R L D                        #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\");assert.strictEqual(new Message().write(\"H\\u2377llo World\",{fallbackChar:null}).toString(),\"#==============================================#\\n# H L L O   W O R L D                          #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "15a78cda-6b1e-4eef-a156-0bc4c706255f",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "66073d88-1031-42fd-9af5-a06ee57b42af",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 },
@@ -867,7 +867,7 @@
                   "title": "should handle the fallback char",
                   "fullTitle": "Message write() should handle the fallback char",
                   "timedOut": false,
-                  "duration": 3,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -876,8 +876,8 @@
                   "context": null,
                   "code": "assert.strictEqual(new Message().write(\"H\\u2377llo World\").toString(),\"#==============================================#\\n# H ? L L O   W O R L D                        #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\");assert.strictEqual(new Message().write(\"H\\u2377llo World\",{fallbackChar:0}).toString(),\"#==============================================#\\n# H   L L O   W O R L D                        #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\");assert.strictEqual(new Message().write(\"H\\u2377llo World\",{fallbackChar:null}).toString(),\"#==============================================#\\n# H L L O   W O R L D                          #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "aaf66906-d051-4aec-89f3-f5cc44dd595c",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "c0b043f3-a778-4332-8bb2-9270aaeae106",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 },
@@ -894,8 +894,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"\\u{1F4AA}\\u{1F3FC} Gym\");assert.strictEqual(msg.toString(),\"#==============================================#\\n# G Y M                                        #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "f33efeea-d450-4ed2-912a-0f39ec1a035a",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "9293b69c-fdad-4370-92aa-b0f69bb85d94",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 },
@@ -903,7 +903,7 @@
                   "title": "should not break if message is way too long",
                   "fullTitle": "Message write() should not break if message is way too long",
                   "timedOut": false,
-                  "duration": 4,
+                  "duration": 5,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -912,35 +912,35 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.\");msg.write(\"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.\");msg.write(\"Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\");msg.write(\"Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\");assert.strictEqual(msg.toString(),\"#==============================================#\\n# L O R E M   I P S U M   D O L O R   S I T    #\\n# A M E T ,   C O N S E C T E T U R            #\\n# A D I P I S I C I   E L I T ,   S E D        #\\n# E I U S M O D   T E M P O R I N C I D U N T  #\\n# U T   L A B O R E   E T   D O L O R E        #\\n# M A G N A   A L I Q U A .   U T   E N I M    #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "4f492e99-4895-43f2-a569-0b9f705d0b53",
-                  "parentUUID": "288d73c0-2349-4ca8-9e75-88be83bd6a2a",
+                  "uuid": "6a3bfa83-3787-4c5b-be9d-827b083d791a",
+                  "parentUUID": "b3ed8db7-19c4-47cb-a78f-f6ddff59a351",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "7d2eb9d0-9351-41eb-b814-031b319abbcb",
-                "93890285-de8d-4cb0-ad35-715cd0b66d50",
-                "5463610e-289d-4233-ab33-905c1e1b2910",
-                "278ef8d9-3886-4eed-8ded-eadf618ffbab",
-                "6a21c60a-d16a-45b7-9b7f-def55e16ceaa",
-                "9a2eb178-b03c-4cb2-bccc-7b2d9f5ef5b4",
-                "15a78cda-6b1e-4eef-a156-0bc4c706255f",
-                "aaf66906-d051-4aec-89f3-f5cc44dd595c",
-                "f33efeea-d450-4ed2-912a-0f39ec1a035a",
-                "4f492e99-4895-43f2-a569-0b9f705d0b53"
+                "7452fbda-691f-4105-bd16-2b3010bd669d",
+                "0629597f-ab9c-463e-b6da-f5174216b419",
+                "572ff6ec-7187-4c50-8ad3-916f42817285",
+                "36206a9d-eed4-43c4-b64d-8c590998793e",
+                "e9d60f0d-7208-47e9-923f-8ebebeb2e65d",
+                "02d7cdca-40a9-44bf-9418-dd1aa7e9adde",
+                "66073d88-1031-42fd-9af5-a06ee57b42af",
+                "c0b043f3-a778-4332-8bb2-9270aaeae106",
+                "9293b69c-fdad-4370-92aa-b0f69bb85d94",
+                "6a3bfa83-3787-4c5b-be9d-827b083d791a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 21,
+              "duration": 19,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "e4189425-61c5-4f1a-b66a-a294737ac17a",
+              "uuid": "709394b1-0649-4597-8c0a-22980ab43250",
               "title": "table()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
               "file": "/test/lib/message.ts",
@@ -960,8 +960,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.table([[\"now\",\"Daily\"],[\"13:00\",\"Secret Meeting\"]]);assert.strictEqual(msg.toString(),\"#==============================================#\\n# N O W         D A I L Y                      #\\n#                                              #\\n# 1 3 : 0 0     S E C R E T   M E E T I N G    #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "74083db4-9bf5-44f6-985e-ab693d56a1b8",
-                  "parentUUID": "e4189425-61c5-4f1a-b66a-a294737ac17a",
+                  "uuid": "dc41f74a-8fd8-431c-92b5-b857facfb995",
+                  "parentUUID": "709394b1-0649-4597-8c0a-22980ab43250",
                   "isHook": false,
                   "skipped": false
                 },
@@ -969,7 +969,7 @@
                   "title": "should just fill the space available if too full",
                   "fullTitle": "Message table() should just fill the space available if too full",
                   "timedOut": false,
-                  "duration": 3,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -978,8 +978,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.table([[\"now\",\"Daily\"],[\"13:00\",\"Super Secret Meeting\"],[\"16:30\",\"Awesome Presentation\"]]);assert.strictEqual(msg.toString(),\"#==============================================#\\n# N O W       D A I L Y                        #\\n#                                              #\\n# 1 3 : 0 0   S U P E R   S E C R E T          #\\n#             M E E T I N G                    #\\n#                                              #\\n# 1 6 : 3 0   A W E S O M E   P R E S E N T -  #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "67ea751d-57c0-423b-a7ed-4fe902bac10b",
-                  "parentUUID": "e4189425-61c5-4f1a-b66a-a294737ac17a",
+                  "uuid": "0c9298bf-196d-4ea2-9b14-705a7628f279",
+                  "parentUUID": "709394b1-0649-4597-8c0a-22980ab43250",
                   "isHook": false,
                   "skipped": false
                 },
@@ -996,8 +996,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Hello World\\n\");msg.table([[\"now\",\"Daily\"],[\"13:00\",\"Secret Meeting\"]]);assert.strictEqual(msg.toString(),\"#==============================================#\\n# H E L L O   W O R L D                        #\\n#                                              #\\n# N O W         D A I L Y                      #\\n#                                              #\\n# 1 3 : 0 0     S E C R E T   M E E T I N G    #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "bd2f0a13-1745-463c-91fd-d20652626389",
-                  "parentUUID": "e4189425-61c5-4f1a-b66a-a294737ac17a",
+                  "uuid": "df9b7021-c6c3-4fae-b4e0-831cd76b787a",
+                  "parentUUID": "709394b1-0649-4597-8c0a-22980ab43250",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1005,7 +1005,7 @@
                   "title": "should throw error if rows have different number of columns",
                   "fullTitle": "Message table() should throw error if rows have different number of columns",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1014,18 +1014,18 @@
                   "context": null,
                   "code": "const msg=new Message;assert.throws(()=>{msg.table([[\"now\",\"Daily\"],[\"13:00\",\"Secret Meeting\",\"\\u{1F7E5}\"]])},/Unable to render table: Row 1 has 3 entries, but first row has 2!/)",
                   "err": {},
-                  "uuid": "8995b784-2452-4a81-8fe6-ad8dfb886162",
-                  "parentUUID": "e4189425-61c5-4f1a-b66a-a294737ac17a",
+                  "uuid": "5fb6d0a0-1fba-432e-b04a-d15cf900c92d",
+                  "parentUUID": "709394b1-0649-4597-8c0a-22980ab43250",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "74083db4-9bf5-44f6-985e-ab693d56a1b8",
-                "67ea751d-57c0-423b-a7ed-4fe902bac10b",
-                "bd2f0a13-1745-463c-91fd-d20652626389",
-                "8995b784-2452-4a81-8fe6-ad8dfb886162"
+                "dc41f74a-8fd8-431c-92b5-b857facfb995",
+                "0c9298bf-196d-4ea2-9b14-705a7628f279",
+                "df9b7021-c6c3-4fae-b4e0-831cd76b787a",
+                "5fb6d0a0-1fba-432e-b04a-d15cf900c92d"
               ],
               "failures": [],
               "pending": [],
@@ -1036,7 +1036,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "1a13a467-5c28-48c0-a1a9-e1e3b52cf750",
+              "uuid": "994631f4-dc83-4bfd-a075-150231003476",
               "title": "center()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/message.ts",
               "file": "/test/lib/message.ts",
@@ -1056,8 +1056,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Hello World\");msg.center();assert.strictEqual(msg.toString(),\"#==============================================#\\n#                                              #\\n#                                              #\\n#           H E L L O   W O R L D              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "d7258420-0983-4c44-84be-1eb900ea1694",
-                  "parentUUID": "1a13a467-5c28-48c0-a1a9-e1e3b52cf750",
+                  "uuid": "858d03bd-6a5b-4825-8767-72f72a52035a",
+                  "parentUUID": "994631f4-dc83-4bfd-a075-150231003476",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1074,8 +1074,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\");msg.center();assert.strictEqual(msg.toString(),\"#==============================================#\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n# \\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5}\\u{1F7E5} #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "de0c2612-44c6-4950-ae98-4b62dbb87881",
-                  "parentUUID": "1a13a467-5c28-48c0-a1a9-e1e3b52cf750",
+                  "uuid": "e2e56ac8-53a3-4054-92f4-cfabaa9459db",
+                  "parentUUID": "994631f4-dc83-4bfd-a075-150231003476",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1083,7 +1083,7 @@
                   "title": "should also work if word is not top/left aligned",
                   "fullTitle": "Message center() should also work if word is not top/left aligned",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1092,22 +1092,22 @@
                   "context": null,
                   "code": "const msg=new Message;msg.write(\"Hello World\",{position:{line:5,row:11}});msg.center();assert.strictEqual(msg.toString(),\"#==============================================#\\n#                                              #\\n#                                              #\\n#           H E L L O   W O R L D              #\\n#                                              #\\n#                                              #\\n#                                              #\\n#==============================================#\\n\")",
                   "err": {},
-                  "uuid": "88b366f2-7269-4cef-a464-4feb2ab480e2",
-                  "parentUUID": "1a13a467-5c28-48c0-a1a9-e1e3b52cf750",
+                  "uuid": "eb32f231-64f0-4089-8004-5dfaf8c9a507",
+                  "parentUUID": "994631f4-dc83-4bfd-a075-150231003476",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d7258420-0983-4c44-84be-1eb900ea1694",
-                "de0c2612-44c6-4950-ae98-4b62dbb87881",
-                "88b366f2-7269-4cef-a464-4feb2ab480e2"
+                "858d03bd-6a5b-4825-8767-72f72a52035a",
+                "e2e56ac8-53a3-4054-92f4-cfabaa9459db",
+                "eb32f231-64f0-4089-8004-5dfaf8c9a507"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 4,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -1123,7 +1123,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "421cd627-82e1-4267-92fe-6fc7eaba32f1",
+          "uuid": "5922c781-9f75-472e-9fa3-c77d62347768",
           "title": "MultipleBoard",
           "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/multiple-boards.ts",
           "file": "/test/lib/multiple-boards.ts",
@@ -1132,7 +1132,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "47ab14cb-0d23-4e4d-84d7-10170a0bed9d",
+              "uuid": "81b30dbc-d113-455b-9d86-5daa42620b35",
               "title": "postMessage()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/multiple-boards.ts",
               "file": "/test/lib/multiple-boards.ts",
@@ -1152,8 +1152,8 @@
                   "context": null,
                   "code": "",
                   "err": {},
-                  "uuid": "6decad51-aa73-445f-a31e-ecedefab7bde",
-                  "parentUUID": "47ab14cb-0d23-4e4d-84d7-10170a0bed9d",
+                  "uuid": "577ba8be-6524-4746-8fe0-73d544cd3166",
+                  "parentUUID": "81b30dbc-d113-455b-9d86-5daa42620b35",
                   "isHook": false,
                   "skipped": false
                 }
@@ -1162,7 +1162,7 @@
               "passes": [],
               "failures": [],
               "pending": [
-                "6decad51-aa73-445f-a31e-ecedefab7bde"
+                "577ba8be-6524-4746-8fe0-73d544cd3166"
               ],
               "skipped": [],
               "duration": 0,
@@ -1181,7 +1181,7 @@
           "_timeout": 30000
         },
         {
-          "uuid": "729effee-34ed-48be-9ae8-de21f7558761",
+          "uuid": "42b54159-1db0-4a3c-84e8-eb5da96bc159",
           "title": "ReadWriteAPI",
           "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/read-write-api.ts",
           "file": "/test/lib/read-write-api.ts",
@@ -1190,7 +1190,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "d33f1bf2-435e-4d4b-84d5-dcc913fbb8d9",
+              "uuid": "29330eab-0d1d-40e9-bd1e-de265649071e",
               "title": "getCurrentMessage()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/read-write-api.ts",
               "file": "/test/lib/read-write-api.ts",
@@ -1210,8 +1210,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\");const json={currentMessage:{layout:JSON.stringify(msg.toCharArray())}};const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"https://rw.vestaboard.com/\");assert.deepStrictEqual(options,{method:\"GET\",headers:{\"X-Vestaboard-Read-Write-Key\":\"3eadf7a8-6602-4bf5-92f4-970d36066958\"}});return{ok:true,status:200,statusText:\"OK\",json:__name(async()=>json,\"json\")}},\"fetch\");const api=new ReadWriteAPI(\"3eadf7a8-6602-4bf5-92f4-970d36066958\",{fetch});const result=await api.getCurrentMessage();assert.deepStrictEqual(result.toCharArray(),msg.toCharArray())",
                   "err": {},
-                  "uuid": "628334ad-d8d4-47bf-87e3-c016e1236608",
-                  "parentUUID": "d33f1bf2-435e-4d4b-84d5-dcc913fbb8d9",
+                  "uuid": "fee0e5c3-5266-4757-af06-127d351d1a4c",
+                  "parentUUID": "29330eab-0d1d-40e9-bd1e-de265649071e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1228,19 +1228,19 @@
                   "context": null,
                   "code": "",
                   "err": {},
-                  "uuid": "1872d869-a1a7-405f-b5d8-1d36d18fe2d2",
-                  "parentUUID": "d33f1bf2-435e-4d4b-84d5-dcc913fbb8d9",
+                  "uuid": "f816e61c-8083-4650-acd6-f41a966ae8be",
+                  "parentUUID": "29330eab-0d1d-40e9-bd1e-de265649071e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "628334ad-d8d4-47bf-87e3-c016e1236608"
+                "fee0e5c3-5266-4757-af06-127d351d1a4c"
               ],
               "failures": [],
               "pending": [
-                "1872d869-a1a7-405f-b5d8-1d36d18fe2d2"
+                "f816e61c-8083-4650-acd6-f41a966ae8be"
               ],
               "skipped": [],
               "duration": 1,
@@ -1249,7 +1249,7 @@
               "_timeout": 30000
             },
             {
-              "uuid": "c7e4b4b5-66c4-4830-9ab6-a6c286bb887a",
+              "uuid": "382af5bc-963e-487e-9649-114e4d9f98bc",
               "title": "postMessage()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/read-write-api.ts",
               "file": "/test/lib/read-write-api.ts",
@@ -1260,7 +1260,7 @@
                   "title": "should work (mocked)",
                   "fullTitle": "ReadWriteAPI postMessage() should work (mocked)",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1269,8 +1269,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\");const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"https://rw.vestaboard.com/\");assert.deepStrictEqual(options,{method:\"POST\",headers:{\"Content-Type\":\"application/json\",\"X-Vestaboard-Read-Write-Key\":\"3eadf7a8-6602-4bf5-92f4-970d36066958\"},body:JSON.stringify(msg.toCharArray())});return{ok:true,status:200,statusText:\"OK\",json:__name(async()=>({status:\"ok\"}),\"json\")}},\"fetch\");const api=new ReadWriteAPI(\"3eadf7a8-6602-4bf5-92f4-970d36066958\",{fetch});await api.postMessage(msg)",
                   "err": {},
-                  "uuid": "165426da-9314-4995-b544-32879783b883",
-                  "parentUUID": "c7e4b4b5-66c4-4830-9ab6-a6c286bb887a",
+                  "uuid": "b8847394-40cd-4f60-b653-ceeeab78f9d4",
+                  "parentUUID": "382af5bc-963e-487e-9649-114e4d9f98bc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1287,22 +1287,22 @@
                   "context": null,
                   "code": "",
                   "err": {},
-                  "uuid": "c1beec82-2efe-4875-b025-9f22bd8ad2ce",
-                  "parentUUID": "c7e4b4b5-66c4-4830-9ab6-a6c286bb887a",
+                  "uuid": "0ebabcfe-723d-4e1d-b43e-de032a7f1640",
+                  "parentUUID": "382af5bc-963e-487e-9649-114e4d9f98bc",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "165426da-9314-4995-b544-32879783b883"
+                "b8847394-40cd-4f60-b653-ceeeab78f9d4"
               ],
               "failures": [],
               "pending": [
-                "c1beec82-2efe-4875-b025-9f22bd8ad2ce"
+                "0ebabcfe-723d-4e1d-b43e-de032a7f1640"
               ],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 30000
@@ -1318,7 +1318,7 @@
           "_timeout": 30000
         },
         {
-          "uuid": "d714a34d-33ec-489e-97d9-9c38e5deb50c",
+          "uuid": "5d091830-2750-46de-9882-e6bd512c0044",
           "title": "SubscriptionAPI",
           "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/subscription-api.ts",
           "file": "/test/lib/subscription-api.ts",
@@ -1327,7 +1327,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "cbcc6c37-6e31-4980-b000-b78cbda03876",
+              "uuid": "ee4ed02e-6fff-4a31-b79c-c86c1239e733",
               "title": "getViewer()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/subscription-api.ts",
               "file": "/test/lib/subscription-api.ts",
@@ -1338,7 +1338,7 @@
                   "title": "should work (mocked)",
                   "fullTitle": "SubscriptionAPI getViewer() should work (mocked)",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1347,8 +1347,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\");const json={type:\"installation\",_id:\"f35032ce-fd2b-4afb-8a24-d71c8085303c\",_created:\"1577829607582\",installation:{_id:\"562038d1-6fdb-4ba5-ae8b-bc9ec882178d\"}};const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"https://platform.vestaboard.com/viewer\");assert.deepStrictEqual(options,{method:\"GET\",headers:{\"X-Vestaboard-Api-Key\":\"3eadf7a8-6602-4bf5-92f4-970d36066958\",\"X-Vestaboard-Api-Secret\":\"******************************\"}});return{ok:true,status:200,statusText:\"OK\",json:__name(async()=>json,\"json\")}},\"fetch\");const api=new SubscriptionAPI(\"3eadf7a8-6602-4bf5-92f4-970d36066958\",\"******************************\",{fetch});const result=await api.getViewer();assert.deepStrictEqual(result,json)",
                   "err": {},
-                  "uuid": "4cc13f8a-4bb2-4c49-9ec2-121aec6dce90",
-                  "parentUUID": "cbcc6c37-6e31-4980-b000-b78cbda03876",
+                  "uuid": "6868b1c9-b879-41e5-92d7-d45f13459c2a",
+                  "parentUUID": "ee4ed02e-6fff-4a31-b79c-c86c1239e733",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1365,28 +1365,28 @@
                   "context": null,
                   "code": "",
                   "err": {},
-                  "uuid": "03027f7c-a551-4343-8e5e-124d8e6f60de",
-                  "parentUUID": "cbcc6c37-6e31-4980-b000-b78cbda03876",
+                  "uuid": "7a0c0eb0-1761-41e7-83a4-26a605c4e885",
+                  "parentUUID": "ee4ed02e-6fff-4a31-b79c-c86c1239e733",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "4cc13f8a-4bb2-4c49-9ec2-121aec6dce90"
+                "6868b1c9-b879-41e5-92d7-d45f13459c2a"
               ],
               "failures": [],
               "pending": [
-                "03027f7c-a551-4343-8e5e-124d8e6f60de"
+                "7a0c0eb0-1761-41e7-83a4-26a605c4e885"
               ],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 30000
             },
             {
-              "uuid": "63f842f4-13ec-4fca-a8a4-95e78cd50541",
+              "uuid": "9e59434b-2fbe-4003-ba1a-212225d0c469",
               "title": "getSubscription()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/subscription-api.ts",
               "file": "/test/lib/subscription-api.ts",
@@ -1397,7 +1397,7 @@
                   "title": "should work (mocked)",
                   "fullTitle": "SubscriptionAPI getSubscription() should work (mocked)",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1406,8 +1406,8 @@
                   "context": null,
                   "code": "const json={subscriptions:[{_id:\"bc6412b3-3aa6-4684-8962-cd2876942c0d\",_created:\"1577833654294\",installation:{_id:\"fefb8778-9500-4522-b115-29c0dd13c402\",installable:{_id:\"b629d7df-7ecb-4460-b51e-f87fa942f113\"}},boards:[{_id:\"a1e866f2-e77e-45d8-997a-2e3ebeff4961\"}]}]};const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"https://platform.vestaboard.com/subscriptions\");assert.deepStrictEqual(options,{method:\"GET\",headers:{\"X-Vestaboard-Api-Key\":\"3eadf7a8-6602-4bf5-92f4-970d36066958\",\"X-Vestaboard-Api-Secret\":\"******************************\"}});return{ok:true,status:200,statusText:\"OK\",json:__name(async()=>json,\"json\")}},\"fetch\");const api=new SubscriptionAPI(\"3eadf7a8-6602-4bf5-92f4-970d36066958\",\"******************************\",{fetch});const result=await api.getSubscriptions();assert.deepStrictEqual(result,json)",
                   "err": {},
-                  "uuid": "d53bb31f-178b-4341-8ef6-8729b7998dd4",
-                  "parentUUID": "63f842f4-13ec-4fca-a8a4-95e78cd50541",
+                  "uuid": "34530355-d9ab-4347-9cd9-55187c0d2414",
+                  "parentUUID": "9e59434b-2fbe-4003-ba1a-212225d0c469",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1424,28 +1424,28 @@
                   "context": null,
                   "code": "",
                   "err": {},
-                  "uuid": "9503511d-fb01-4234-95a0-49fc4039ebbd",
-                  "parentUUID": "63f842f4-13ec-4fca-a8a4-95e78cd50541",
+                  "uuid": "5afa7e16-bf0d-47dd-9dc7-b77fc57b0b06",
+                  "parentUUID": "9e59434b-2fbe-4003-ba1a-212225d0c469",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d53bb31f-178b-4341-8ef6-8729b7998dd4"
+                "34530355-d9ab-4347-9cd9-55187c0d2414"
               ],
               "failures": [],
               "pending": [
-                "9503511d-fb01-4234-95a0-49fc4039ebbd"
+                "5afa7e16-bf0d-47dd-9dc7-b77fc57b0b06"
               ],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 30000
             },
             {
-              "uuid": "7c83f72e-77e1-4ebf-bd31-8fa0d2694cae",
+              "uuid": "7560a640-b937-467f-b168-369a6588c0d7",
               "title": "postMessage()",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/subscription-api.ts",
               "file": "/test/lib/subscription-api.ts",
@@ -1465,8 +1465,8 @@
                   "context": null,
                   "code": "const msg=new Message;msg.fill(\"\\u{1F7E5}\\u{1F7E7}\\u{1F7E8}\\u{1F7E9}\\u{1F7E6}\\u{1F7EA}\");const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"https://platform.vestaboard.com/subscriptions/foo/message\");assert.deepStrictEqual(options,{method:\"POST\",headers:{\"Content-Type\":\"application/json\",\"X-Vestaboard-Api-Key\":\"3eadf7a8-6602-4bf5-92f4-970d36066958\",\"X-Vestaboard-Api-Secret\":\"******************************\"},body:JSON.stringify({characters:msg.toCharArray()})});return{ok:true,status:200,statusText:\"OK\",json:__name(async()=>({message:{id:\"\",created:1}}),\"json\")}},\"fetch\");const api=new SubscriptionAPI(\"3eadf7a8-6602-4bf5-92f4-970d36066958\",\"******************************\",{fetch});const result=await api.postMessage(msg,\"foo\");assert.deepStrictEqual(result,{message:{id:\"\",created:1}})",
                   "err": {},
-                  "uuid": "6a415217-8dfb-434b-9d8a-2db081e59462",
-                  "parentUUID": "7c83f72e-77e1-4ebf-bd31-8fa0d2694cae",
+                  "uuid": "36442f41-373e-4a9a-88fe-66e4f13cdd23",
+                  "parentUUID": "7560a640-b937-467f-b168-369a6588c0d7",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1483,8 +1483,8 @@
                   "context": null,
                   "code": "const fetch=__name(async(url,options)=>{const msg=new Message(\"Hello World\");assert.strictEqual(url,\"https://platform.vestaboard.com/subscriptions/foo/message\");assert.deepStrictEqual(options,{method:\"POST\",headers:{\"Content-Type\":\"application/json\",\"X-Vestaboard-Api-Key\":\"3eadf7a8-6602-4bf5-92f4-970d36066958\",\"X-Vestaboard-Api-Secret\":\"******************************\"},body:JSON.stringify({characters:msg.toCharArray()})});return{ok:true,status:200,statusText:\"OK\",json:__name(async()=>({message:{id:\"\",created:1}}),\"json\")}},\"fetch\");const api=new SubscriptionAPI(\"3eadf7a8-6602-4bf5-92f4-970d36066958\",\"******************************\",{fetch});const result=await api.postMessage(\"Hello World\",[\"foo\",\"foo\"]);assert.deepStrictEqual(result,[{message:{id:\"\",created:1}},{message:{id:\"\",created:1}}])",
                   "err": {},
-                  "uuid": "71aaa535-a63e-4eec-b24d-c3412e0b540f",
-                  "parentUUID": "7c83f72e-77e1-4ebf-bd31-8fa0d2694cae",
+                  "uuid": "b00dc8ba-1d9b-47c0-9ee7-f2410d030244",
+                  "parentUUID": "7560a640-b937-467f-b168-369a6588c0d7",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1501,20 +1501,20 @@
                   "context": null,
                   "code": "",
                   "err": {},
-                  "uuid": "1273e74b-c760-4609-9acb-d8466d81258f",
-                  "parentUUID": "7c83f72e-77e1-4ebf-bd31-8fa0d2694cae",
+                  "uuid": "88b5d154-91ee-491a-bee5-59716d2befdc",
+                  "parentUUID": "7560a640-b937-467f-b168-369a6588c0d7",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "6a415217-8dfb-434b-9d8a-2db081e59462",
-                "71aaa535-a63e-4eec-b24d-c3412e0b540f"
+                "36442f41-373e-4a9a-88fe-66e4f13cdd23",
+                "b00dc8ba-1d9b-47c0-9ee7-f2410d030244"
               ],
               "failures": [],
               "pending": [
-                "1273e74b-c760-4609-9acb-d8466d81258f"
+                "88b5d154-91ee-491a-bee5-59716d2befdc"
               ],
               "skipped": [],
               "duration": 2,
@@ -1533,7 +1533,7 @@
           "_timeout": 30000
         },
         {
-          "uuid": "620efdec-7c9a-4923-adf1-a6ac51bcef5d",
+          "uuid": "4f5f6c7e-79e7-462a-8000-b1a6661df1f8",
           "title": "Tools",
           "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/tools.ts",
           "file": "/test/lib/tools.ts",
@@ -1542,7 +1542,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "7e3939a3-7e91-4eb2-bf51-71c37f99e734",
+              "uuid": "a2fa5ae7-427e-44d7-bd97-9620f7fb2bcc",
               "title": "request",
               "fullFile": "/home/runner/work/vestaboard/vestaboard/test/lib/tools.ts",
               "file": "/test/lib/tools.ts",
@@ -1562,8 +1562,8 @@
                   "context": null,
                   "code": "const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"https://example.com/test\");assert.deepStrictEqual(options,{method:\"GET\",headers:{\"X-Test-Header\":\"1337\"}});return{ok:true,status:200,statusText:\"OK\",json:__name(async()=>({foo:\"bar\"}),\"json\")}},\"fetch\");const response=await request(\"https://example.com/test\",{\"X-Test-Header\":\"1337\"},void 0,{fetch});assert.deepStrictEqual(response,{foo:\"bar\"})",
                   "err": {},
-                  "uuid": "39915726-3b9c-409e-9fb3-0beaa9ed740c",
-                  "parentUUID": "7e3939a3-7e91-4eb2-bf51-71c37f99e734",
+                  "uuid": "74422c09-0bf3-4bfe-82ee-f0c41df86e4e",
+                  "parentUUID": "a2fa5ae7-427e-44d7-bd97-9620f7fb2bcc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1580,16 +1580,16 @@
                   "context": null,
                   "code": "const fetch=__name(async(url,options)=>{assert.strictEqual(url,\"https://example.com/test\");assert.deepStrictEqual(options,{method:\"GET\",headers:{\"X-Test-Header\":\"1337\"}});return{ok:false,status:500,statusText:\"ERROR\",json:__name(async()=>\"\",\"json\")}},\"fetch\");await assert.rejects(async()=>{await request(\"https://example.com/test\",{\"X-Test-Header\":\"1337\"},void 0,{fetch})},/HTTP Request failed/)",
                   "err": {},
-                  "uuid": "29f6fefa-79a8-41e7-9278-88c1578b2ec0",
-                  "parentUUID": "7e3939a3-7e91-4eb2-bf51-71c37f99e734",
+                  "uuid": "5e3bf622-9f84-4cfb-969e-57a8d54a43aa",
+                  "parentUUID": "a2fa5ae7-427e-44d7-bd97-9620f7fb2bcc",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "39915726-3b9c-409e-9fb3-0beaa9ed740c",
-                "29f6fefa-79a8-41e7-9278-88c1578b2ec0"
+                "74422c09-0bf3-4bfe-82ee-f0c41df86e4e",
+                "5e3bf622-9f84-4cfb-969e-57a8d54a43aa"
               ],
               "failures": [],
               "pending": [],
@@ -1622,7 +1622,7 @@
   ],
   "meta": {
     "mocha": {
-      "version": "10.8.2"
+      "version": "11.0.1"
     },
     "mochawesome": {
       "options": {
