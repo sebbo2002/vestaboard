@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/sebbo2002/vestaboard/compare/v4.0.0...v4.0.1) (2025-01-09)
+
+
+### Bug Fixes
+
+* **deps:** downgrade eslint to v9.13.0 to resolve typescript-eslint issue ([ccef307](https://github.com/sebbo2002/vestaboard/commit/ccef30747b18cbec9d1df591a46394dadbabec60)), closes [#10353](https://github.com/sebbo2002/vestaboard/issues/10353) [typescript-eslint/typescript-eslint#10353](https://github.com/typescript-eslint/typescript-eslint/issues/10353)
+
 # [4.0.0](https://github.com/sebbo2002/vestaboard/compare/v3.1.0...v4.0.0) (2024-08-26)
 
 
