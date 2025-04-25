@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>36/36</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>36/36</span>
             </div>
         
             
@@ -94,7 +94,13 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -108,51 +114,60 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Message from './message.js';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { ReadWriteGetMessageResponse, RequestOptions } from './types.js';
+&nbsp;
+import Message from './message.js';
 import { request } from './tools.js';
-import type { ReadWriteGetMessageResponse, RequestOptions } from './types.js';
 &nbsp;
 export default class ReadWriteAPI {
     private readonly key: string;
     private readonly options: RequestOptions;
 &nbsp;
-    constructor (key: string, options?: RequestOptions) {
+    constructor(key: string, options?: RequestOptions) {
         this.key = key;
         this.options = <span class="branch-0 cbranch-no" title="branch not covered" >options || {};</span>
     }
 &nbsp;
-    private async request&lt;T&gt; (path: string, data?: string): Promise&lt;T&gt; {
-        return request(`https://rw.vestaboard.com${path}`, {
-            'X-Vestaboard-Read-Write-Key': this.key
-        }, data, this.options);
-    }
-&nbsp;
-    async getCurrentMessage (): Promise&lt;Message&gt; {
+    async getCurrentMessage(): Promise&lt;Message&gt; {
         const response = await this.request&lt;ReadWriteGetMessageResponse&gt;('/');
         return new Message(JSON.parse(response.currentMessage.layout));
     }
 &nbsp;
-    async postMessage (message: Message | string) {
-        const msgObj = typeof message === <span class="branch-0 cbranch-no" title="branch not covered" >'string' ? new Message(message) : m</span>essage;
-        await this.request&lt;void&gt;('/',
-            JSON.stringify(msgObj.toCharArray())
+    async postMessage(message: Message | string) {
+        const msgObj =
+            typeof message === <span class="branch-0 cbranch-no" title="branch not covered" >'string' ? new Message(message) : m</span>essage;
+        await this.request&lt;void&gt;('/', JSON.stringify(msgObj.toCharArray()));
+    }
+&nbsp;
+    private async request&lt;T&gt;(path: string, data?: string): Promise&lt;T&gt; {
+        return request(
+            `https://rw.vestaboard.com${path}`,
+            {
+                'X-Vestaboard-Read-Write-Key': this.key,
+            },
+            data,
+            this.options,
         );
     }
 }
@@ -163,7 +178,7 @@ export default class ReadWriteAPI {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-23T17:59:57.794Z
+                at 2025-04-25T19:50:43.964Z
             </div>
         <script src="prettify.js"></script>
         <script>
