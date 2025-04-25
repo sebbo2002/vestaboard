@@ -1,29 +1,46 @@
 'use strict';
 
 import 'dotenv/config';
-import LocalAPI from '../../src/local-api.js';
-import ReadWriteAPI from '../../src/read-write-api.js';
-import MultipleBoards from '../../src/multiple-boards.js';
 
-const RUN_INTEGRATION_TESTS = process.env.VESTABOARD_LOCAL_KEY && process.env.VESTABOARD_READ_WRITE_KEY;
+import LocalAPI from '../../src/local-api.js';
+import MultipleBoards from '../../src/multiple-boards.js';
+import ReadWriteAPI from '../../src/read-write-api.js';
+
+const RUN_INTEGRATION_TESTS =
+    process.env.VESTABOARD_LOCAL_KEY && process.env.VESTABOARD_READ_WRITE_KEY;
 
 describe('MultipleBoard', function () {
     this.timeout(30000);
 
     describe('postMessage()', function () {
-        it('should work (live)', RUN_INTEGRATION_TESTS ? async function () {
-            if (!process.env.VESTABOARD_LOCAL_KEY || !process.env.VESTABOARD_READ_WRITE_KEY) {
-                return;
-            }
+        it(
+            'should work (live)',
+            RUN_INTEGRATION_TESTS
+                ? async function () {
+                      if (
+                          !process.env.VESTABOARD_LOCAL_KEY ||
+                          !process.env.VESTABOARD_READ_WRITE_KEY
+                      ) {
+                          return;
+                      }
 
-            new MultipleBoards();
-            const boards = new MultipleBoards([
-                new LocalAPI(process.env.VESTABOARD_LOCAL_KEY, process.env.VESTABOARD_LOCAL_HOST)
-            ]);
+                      new MultipleBoards();
+                      const boards = new MultipleBoards([
+                          new LocalAPI(
+                              process.env.VESTABOARD_LOCAL_KEY,
+                              process.env.VESTABOARD_LOCAL_HOST,
+                          ),
+                      ]);
 
-            boards.push(new ReadWriteAPI(process.env.VESTABOARD_READ_WRITE_KEY));
+                      boards.push(
+                          new ReadWriteAPI(
+                              process.env.VESTABOARD_READ_WRITE_KEY,
+                          ),
+                      );
 
-            await boards.postMessage('Hello World');
-        } : undefined);
+                      await boards.postMessage('Hello World');
+                  }
+                : undefined,
+        );
     });
 });

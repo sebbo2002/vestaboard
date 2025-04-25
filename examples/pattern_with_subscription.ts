@@ -8,6 +8,6 @@ api.postMessage(msg)
         console.log('Message posted on board:');
         console.log(msg.toString());
     })
-    .catch(error => {
+    .catch((error) => {
         console.error(error);
     });

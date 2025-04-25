@@ -1,8 +1,9 @@
 'use strict';
 
 import assert from 'assert';
-import { RequestOptionsFetch } from '../../src/types.js';
+
 import { request } from '../../src/tools.js';
+import { RequestOptionsFetch } from '../../src/types.js';
 
 describe('Tools', function () {
     this.timeout(30000);
@@ -12,23 +13,28 @@ describe('Tools', function () {
             const fetch: RequestOptionsFetch = async (url, options) => {
                 assert.strictEqual(url, 'https://example.com/test');
                 assert.deepStrictEqual(options, {
-                    method: 'GET',
                     headers: {
-                        'X-Test-Header': '1337'
-                    }
+                        'X-Test-Header': '1337',
+                    },
+                    method: 'GET',
                 });
 
                 return {
+                    json: async () => ({ foo: 'bar' }),
                     ok: true,
                     status: 200,
                     statusText: 'OK',
-                    json: async () => ({ foo: 'bar'})
                 };
             };
 
-            const response = await request('https://example.com/test', {
-                'X-Test-Header': '1337'
-            }, undefined, { fetch });
+            const response = await request(
+                'https://example.com/test',
+                {
+                    'X-Test-Header': '1337',
+                },
+                undefined,
+                { fetch },
+            );
 
             assert.deepStrictEqual(response, { foo: 'bar' });
         });
@@ -36,24 +42,29 @@ describe('Tools', function () {
             const fetch: RequestOptionsFetch = async (url, options) => {
                 assert.strictEqual(url, 'https://example.com/test');
                 assert.deepStrictEqual(options, {
-                    method: 'GET',
                     headers: {
-                        'X-Test-Header': '1337'
-                    }
+                        'X-Test-Header': '1337',
+                    },
+                    method: 'GET',
                 });
 
                 return {
+                    json: async () => '',
                     ok: false,
                     status: 500,
                     statusText: 'ERROR',
-                    json: async () => ('')
                 };
             };
 
             await assert.rejects(async () => {
-                await request('https://example.com/test', {
-                    'X-Test-Header': '1337'
-                }, undefined, { fetch });
+                await request(
+                    'https://example.com/test',
+                    {
+                        'X-Test-Header': '1337',
+                    },
+                    undefined,
+                    { fetch },
+                );
             }, /HTTP Request failed/);
         });
     });
