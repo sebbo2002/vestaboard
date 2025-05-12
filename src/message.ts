@@ -1,12 +1,12 @@
 import GraphemeSplitter from 'grapheme-splitter';
+
 import {
-    BOARD_LINES,
     BOARD_LINE_LENGTH,
-    MessageWritePosition,
+    BOARD_LINES,
     type BoardCharArray,
     type MessageWriteOptions,
+    MessageWritePosition,
 } from './types.js';
-
 
 /**
  * Map with all supported characters plus a few emojis
@@ -88,7 +88,7 @@ export const CHAR_MAP: Array<[string, number[]]> = [
     ['=', [48]],
     [';', [49]],
     [':', [50]],
-    ['\'', [52]],
+    ["'", [52]],
     ['"', [53]],
     ['%', [54]],
     [',', [55]],
@@ -207,11 +207,11 @@ export const CHAR_MAP: Array<[string, number[]]> = [
     ['❓', [60]],
     ['❔', [60]],
     ['℃', [62, 3]],
-    ['℉', [62, 6]]
+    ['℉', [62, 6]],
 ];
 
 const EMPTY_BOARD: BoardCharArray = new Array(BOARD_LINES).fill(
-    new Array(BOARD_LINE_LENGTH).fill(0)
+    new Array(BOARD_LINE_LENGTH).fill(0),
 ) as BoardCharArray;
 
 /**
@@ -231,56 +231,27 @@ const EMPTY_BOARD: BoardCharArray = new Array(BOARD_LINES).fill(
  */
 export default class Message {
     private static readonly splitter = new GraphemeSplitter();
+    get isEmpty(): boolean {
+        return !this.board.find((line) => line.find((char) => char !== 0));
+    }
     private readonly board: BoardCharArray;
+
     private cursor = [0, 0];
 
-    constructor (message?: BoardCharArray | string) {
-        if(typeof message === 'string' && message) {
+    constructor(message?: BoardCharArray | string) {
+        if (typeof message === 'string' && message) {
             this.board = JSON.parse(JSON.stringify(EMPTY_BOARD));
             this.write(message);
             this.center();
-        }
-        else if(Array.isArray(message)) {
+        } else if (Array.isArray(message)) {
             this.board = message;
-        }
-        else {
+        } else {
             this.board = JSON.parse(JSON.stringify(EMPTY_BOARD));
         }
     }
 
-    static string2chars (word: string, options: MessageWriteOptions = {}): number[] {
-        let chars: number[] = [];
-        const singleCharStrings = Message.splitter.splitGraphemes(word);
-        for (const char of singleCharStrings) {
-            chars.push(...this.char2char(char));
-        }
-
-        // trim emoji words if not disabled
-        if (options.removeUnsupportedWords !== false) {
-            chars = Message.removeEmojisFromChars(chars);
-        }
-
-        // replace -1 with fallback char
-        chars = chars.map(char => {
-            if (char >= 0) {
-                return char;
-            } else if (char === -2) {
-                return 0;
-            } else if (typeof options.fallbackChar === 'number') {
-                return options.fallbackChar;
-            } else if (options.fallbackChar === null) {
-                return -1;
-            } else {
-                return 60;
-            }
-        }).filter(char => char >= 0);
-
-        return chars;
-    }
-
-    static char2char (char: string): number[] {
-        const fromMap = CHAR_MAP
-            .find(([mapChar]) => char === mapChar);
+    static char2char(char: string): number[] {
+        const fromMap = CHAR_MAP.find(([mapChar]) => char === mapChar);
 
         if (fromMap && Array.isArray(fromMap[1])) {
             return fromMap[1];
@@ -289,7 +260,7 @@ export default class Message {
         return [-1];
     }
 
-    static charToString (char: number): string {
+    static charToString(char: number): string {
         const entry = Object.values(CHAR_MAP)
             .filter(([name]) => name.length <= 2)
             .find(([, code]) => code[0] === char);
@@ -301,9 +272,108 @@ export default class Message {
         return '⚡︎ ';
     }
 
-    static splitCharsIntoLines (chars: number[], lineLength: [number, number]): Array<number[]> {
+    static getColumnSizesFromData(
+        rows: Array<string[]>,
+        options: MessageWriteOptions = {},
+    ): number[] {
+        if (!rows.length) {
+            return [];
+        }
+
+        const columns = rows[0].length;
+        const columnDefaultSizes: number[] = [];
+        rows.forEach((row, rowIndex) => {
+            if (row.length !== columns) {
+                throw new Error(
+                    `Unable to render table: Row ${rowIndex} has ${row.length} entries, but first row has ${columns}!`,
+                );
+            }
+            row.forEach((column, columnIndex) => {
+                columnDefaultSizes[columnIndex] = Math.max(
+                    columnDefaultSizes[columnIndex] || 0,
+                    this.string2chars(column, options).length,
+                );
+            });
+        });
+
+        const columnDefaultSum = columnDefaultSizes.reduce((a, b) => a + b, 0);
+        const columnBorders = rows[0].length - 1;
+        const factor = Math.max(
+            (BOARD_LINE_LENGTH - columnBorders) / columnDefaultSum,
+            1,
+        );
+        const columnSizes = columnDefaultSizes.map((size) =>
+            Math.round(size * factor),
+        );
+
+        while (true) {
+            const size = columnSizes.reduce((a, b) => a + b, 0) + columnBorders;
+            if (size === BOARD_LINE_LENGTH) {
+                break;
+            }
+
+            const diff = BOARD_LINE_LENGTH - size < 0 ? -1 : 1;
+            const index = columnSizes.indexOf(
+                diff < 0 ? Math.max(...columnSizes) : Math.min(...columnSizes),
+            );
+            if (index < 0) {
+                // This can actually never be achieved...
+                throw new Error('Unable to find max value in array…');
+            }
+
+            columnSizes[index] += diff;
+        }
+
+        return columnSizes;
+    }
+
+    static removeEmojisFromChars(chars: number[]): number[] {
+        const words: Array<number[]> = [];
+        for (const char of chars) {
+            if (!words.length) {
+                words.push([]);
+            }
+
+            if (char === 0) {
+                words.push([]);
+            } else {
+                words[words.length - 1].push(char);
+            }
+        }
+
+        words.forEach((chars) => {
+            if (chars.length > 0 && chars[0] === -1) {
+                while (chars[0] < 0) {
+                    chars.splice(0, 1);
+                }
+            }
+            if (chars.length > 0 && chars[chars.length - 1] === -1) {
+                while (chars.length > 0 && chars[chars.length - 1] < 0) {
+                    chars.splice(chars.length - 1, 1);
+                }
+            }
+        });
+
+        const result: number[] = [];
+        words
+            .filter((chars) => chars.length > 0)
+            .forEach((chars) => {
+                if (result.length !== 0) {
+                    result.push(0);
+                }
+
+                result.push(...chars);
+            });
+
+        return result;
+    }
+
+    static splitCharsIntoLines(
+        chars: number[],
+        lineLength: [number, number],
+    ): Array<number[]> {
         // Array with splitting char (if any) and chars of the word
-        const words: Array<[number | null, number[]]> = [];
+        const words: Array<[null | number, number[]]> = [];
         for (const char of chars) {
             if (!words.length) {
                 words.push([null, []]);
@@ -327,7 +397,8 @@ export default class Message {
             }
 
             let currentLine = lines[lines.length - 1];
-            let charsLeft = lineLength[lines.length === 1 ? 0 : 1] - currentLine.length;
+            let charsLeft =
+                lineLength[lines.length === 1 ? 0 : 1] - currentLine.length;
 
             // start of line, word fits
             if (!currentLine.length && word.length <= charsLeft) {
@@ -382,201 +453,123 @@ export default class Message {
         return lines;
     }
 
-    static removeEmojisFromChars (chars: number[]): number[] {
-        const words: Array<number[]> = [];
-        for (const char of chars) {
-            if (!words.length) {
-                words.push([]);
-            }
-
-            if (char === 0) {
-                words.push([]);
-            } else {
-                words[words.length - 1].push(char);
-            }
+    static string2chars(
+        word: string,
+        options: MessageWriteOptions = {},
+    ): number[] {
+        let chars: number[] = [];
+        const singleCharStrings = Message.splitter.splitGraphemes(word);
+        for (const char of singleCharStrings) {
+            chars.push(...this.char2char(char));
         }
 
-        words.forEach(chars => {
-            if (chars.length > 0 && chars[0] === -1) {
-                while (chars[0] < 0) {
-                    chars.splice(0, 1);
-                }
-            }
-            if (chars.length > 0 && chars[chars.length - 1] === -1) {
-                while (chars.length > 0 && chars[chars.length - 1] < 0) {
-                    chars.splice(chars.length - 1, 1);
-                }
-            }
-        });
+        // trim emoji words if not disabled
+        if (options.removeUnsupportedWords !== false) {
+            chars = Message.removeEmojisFromChars(chars);
+        }
 
-        const result: number[] = [];
-        words
-            .filter(chars => chars.length > 0)
-            .forEach(chars => {
-                if (result.length !== 0) {
-                    result.push(0);
+        // replace -1 with fallback char
+        chars = chars
+            .map((char) => {
+                if (char >= 0) {
+                    return char;
+                } else if (char === -2) {
+                    return 0;
+                } else if (typeof options.fallbackChar === 'number') {
+                    return options.fallbackChar;
+                } else if (options.fallbackChar === null) {
+                    return -1;
+                } else {
+                    return 60;
                 }
+            })
+            .filter((char) => char >= 0);
 
-                result.push(...chars);
-            });
-
-        return result;
+        return chars;
     }
 
-    static getColumnSizesFromData (rows: Array<string[]>, options: MessageWriteOptions = {}): number[] {
-        if (!rows.length) {
-            return [];
+    /**
+     * Center the current message content
+     */
+    center(): void {
+        const space = [
+            this.board.findIndex((l) => l.find((c) => c !== 0)),
+            Math.min(
+                ...this.board.map((l) =>
+                    l.find((c) => c !== 0)
+                        ? l
+                              .slice()
+                              .reverse()
+                              .findIndex((c) => c !== 0)
+                        : l.length,
+                ),
+            ),
+            this.board
+                .slice()
+                .reverse()
+                .findIndex((l) => l.find((c) => c !== 0)),
+            Math.min(
+                ...this.board.map((l) =>
+                    l.find((c) => c !== 0)
+                        ? l.findIndex((c) => c !== 0)
+                        : l.length,
+                ),
+            ),
+        ];
+
+        const padding = [
+            Math.floor((space[0] + space[2]) / 2),
+            Math.floor((space[1] + space[3]) / 2),
+        ];
+
+        // Move up/down
+        if (space[0] !== padding[0]) {
+            const add = padding[0] - space[0];
+            this.board.splice(
+                add > 0 ? 0 : this.board.length,
+                0,
+                ...this.board.splice(
+                    add > 0 ? this.board.length - add : 0,
+                    Math.abs(add),
+                ),
+            );
         }
 
-        const columns = rows[0].length;
-        const columnDefaultSizes: number[] = [];
-        rows.forEach((row, rowIndex) => {
-            if (row.length !== columns) {
-                throw new Error(`Unable to render table: Row ${rowIndex} has ${row.length} entries, but first row has ${columns}!`);
-            }
-            row.forEach((column, columnIndex) => {
-                columnDefaultSizes[columnIndex] = Math.max(columnDefaultSizes[columnIndex] || 0, this.string2chars(column, options).length);
+        // Move left/right
+        if (space[3] !== padding[1]) {
+            const add = padding[1] - space[3];
+            this.board.forEach((line) => {
+                line.splice(
+                    add > 0 ? 0 : line.length,
+                    0,
+                    ...line.splice(
+                        add > 0 ? line.length - add : 0,
+                        Math.abs(add),
+                    ),
+                );
             });
-        });
-
-        const columnDefaultSum = columnDefaultSizes.reduce((a, b) => a + b, 0);
-        const columnBorders = rows[0].length - 1;
-        const factor = Math.max((BOARD_LINE_LENGTH - columnBorders) / columnDefaultSum, 1);
-        const columnSizes = columnDefaultSizes.map(size => Math.round(size * factor));
-
-        while (true) {
-            const size = columnSizes.reduce((a, b) => a + b, 0) + columnBorders;
-            if (size === BOARD_LINE_LENGTH) {
-                break;
-            }
-
-            const diff = BOARD_LINE_LENGTH - size < 0 ? -1 : 1;
-            const index = columnSizes.indexOf(diff < 0 ? Math.max(...columnSizes) : Math.min(...columnSizes));
-            if(index < 0) {
-                // This can actually never be achieved...
-                throw new Error('Unable to find max value in array…');
-            }
-
-            columnSizes[index] += diff;
         }
-
-
-        return columnSizes;
-    }
-
-    get isEmpty (): boolean {
-        return !this.board.find(line =>
-            line.find(char => char !== 0)
-        );
     }
 
     /**
      * Fills the board with the passed character or text. The text
      * is repeated again and again until the board is completely filled.
      */
-    fill (text = ' '): this {
+    fill(text = ' '): this {
         let pointer = 0;
-        const chars = Message.string2chars(text, {removeUnsupportedWords: false});
+        const chars = Message.string2chars(text, {
+            removeUnsupportedWords: false,
+        });
         this.board.forEach((line) => {
             line.forEach((char, charIndex) => {
                 line[charIndex] = chars[pointer];
                 pointer++;
 
-                if(pointer > chars.length - 1) {
+                if (pointer > chars.length - 1) {
                     pointer = 0;
                 }
             });
         });
-        return this;
-    }
-
-    /**
-     * Write a text on your new message. If your message is not empty it will continue
-     * where you last left off (`position: MessageWritePosition.CURRENT`). Alternatively
-     * you can continue on the next line or give an exact position.
-     *
-     * @param text
-     * @param options
-     */
-    write (text: string, options: MessageWriteOptions = {}): this {
-
-        // Cursor blow board length? Just return…
-        if (!this.board[this.cursor[0]]) {
-            return this;
-        }
-
-        // Add new line if NEXT_LINE is set (except it's already in the first line)
-        if (options.position === MessageWritePosition.NEXT_LINE && (this.cursor[0] !== 0 || this.cursor[1] !== 0)) {
-            this.cursor[0]++;
-            this.cursor[1] = 0;
-        }
-
-        // Set cursor to given position
-        else if (typeof options.position === 'object') {
-            this.cursor[0] = options.position.line;
-            this.cursor[1] = options.position.row || 0;
-        }
-
-        // Add space before text as it
-        // will be rendered in the same line
-        if (
-            (options.position === undefined || options.position === MessageWritePosition.CURRENT) &&
-            this.cursor[1] !== 0 && this.cursor[1] < BOARD_LINE_LENGTH - 1
-        ) {
-            this.board[this.cursor[0]].splice(this.cursor[1], 1, 0);
-            this.cursor[1] += 1;
-        }
-
-        // Figure out left indent
-        let indent = 0;
-        if (options.indent === true) {
-            indent = this.cursor[1];
-        } else if (typeof options.indent === 'number' && options.indent >= 0 && options.indent <= BOARD_LINE_LENGTH - 5) {
-            indent = options.indent;
-        }
-
-        const linesOfText = text.split('\n');
-        let isFirstLine = true;
-        for (const lineOfText of linesOfText) {
-            const chars = Message.string2chars(lineOfText, options);
-            const charsLeftInLine: [number, number] = [
-                BOARD_LINE_LENGTH - this.cursor[1],
-                BOARD_LINE_LENGTH - indent
-            ];
-
-            if(!isFirstLine) {
-                this.cursor[0]++;
-                this.cursor[1] = indent;
-            }
-
-            if(typeof options.position === 'object' && options.position.width) {
-                charsLeftInLine[0] = Math.min(charsLeftInLine[0], options.position.width);
-                charsLeftInLine[1] = Math.min(charsLeftInLine[1], options.position.width - indent);
-            }
-
-            const linesOfChars = Message.splitCharsIntoLines(chars, charsLeftInLine);
-            for (const chars of linesOfChars) {
-
-                // Board is over, skip line…
-                if (!this.board[this.cursor[0]]) {
-                    break;
-                }
-
-                // Add chars to current line and update cursor
-                this.board[this.cursor[0]].splice(this.cursor[1], chars.length, ...chars);
-                this.cursor[1] += chars.length;
-
-                // Add new line (and update cursor),
-                // if this wasn't the last line
-                if (chars !== linesOfChars[linesOfChars.length - 1]) {
-                    this.cursor[0]++;
-                    this.cursor[1] = indent;
-                }
-            }
-
-            isFirstLine = false;
-        }
-
         return this;
     }
 
@@ -598,14 +591,14 @@ export default class Message {
      * # 1 6 : 3 0   A W E S O M E   P R E S E N T -  #
      * #==============================================#
      */
-    table (rows: Array<string[]>): this {
+    table(rows: Array<string[]>): this {
         const columnWidths = Message.getColumnSizesFromData(rows);
         if (this.cursor[0] !== 0 || this.cursor[1] !== 0) {
             this.cursor[0]++;
             this.cursor[1] = 0;
         }
 
-        rows.forEach(line => {
+        rows.forEach((line) => {
             const lineStart = this.cursor[0];
             let lineHeight = 1;
 
@@ -616,15 +609,18 @@ export default class Message {
                     .reduce((a, b) => a + b + 1, 0);
 
                 this.write(column, {
+                    indent,
                     position: {
                         line: lineStart,
                         row: indent,
-                        width: columnWidth
+                        width: columnWidth,
                     },
-                    indent
                 });
 
-                lineHeight = Math.max(lineHeight, this.cursor[0] - lineStart + 1);
+                lineHeight = Math.max(
+                    lineHeight,
+                    this.cursor[0] - lineStart + 1,
+                );
             });
 
             this.cursor[0] = lineStart + lineHeight + 1;
@@ -634,50 +630,141 @@ export default class Message {
         return this;
     }
 
-    /**
-     * Center the current message content
-     */
-    center(): void {
-        const space = [
-            this.board.findIndex(l => l.find(c => c !== 0)),
-            Math.min(...this.board.map(l => l.find(c => c !== 0) ? l.slice().reverse().findIndex(c => c !== 0) : l.length)),
-            this.board.slice().reverse().findIndex(l => l.find(c => c !== 0)),
-            Math.min(...this.board.map(l => l.find(c => c !== 0) ? l.findIndex(c => c !== 0) : l.length)),
-        ];
-
-        const padding = [
-            Math.floor((space[0] + space[2]) / 2),
-            Math.floor((space[1] + space[3]) / 2)
-        ];
-
-        // Move up/down
-        if(space[0] !== padding[0]) {
-            const add = padding[0] - space[0];
-            this.board.splice(add > 0 ? 0 : this.board.length, 0,
-                ...this.board.splice(add > 0 ? this.board.length - add : 0, Math.abs(add))
-            );
-        }
-
-        // Move left/right
-        if(space[3] !== padding[1]) {
-            const add = padding[1] - space[3];
-            this.board.forEach(line => {
-                line.splice(add > 0 ? 0 : line.length, 0,
-                    ...line.splice(add > 0 ? line.length - add : 0, Math.abs(add))
-                );
-            });
-        }
-    }
-
-    toString (): string {
-        return '#=' + '='.repeat(BOARD_LINE_LENGTH * 2) + '=#\n' +
-            this.board.map(line => '# ' + line.map(char =>
-                Message.charToString(char)
-            ).join('') + ' #\n').join('') +
-            '#=' + '='.repeat(BOARD_LINE_LENGTH * 2) + '=#\n';
-    }
-
-    toCharArray (): BoardCharArray {
+    toCharArray(): BoardCharArray {
         return JSON.parse(JSON.stringify(this.board));
+    }
+
+    toString(): string {
+        return (
+            '#=' +
+            '='.repeat(BOARD_LINE_LENGTH * 2) +
+            '=#\n' +
+            this.board
+                .map(
+                    (line) =>
+                        '# ' +
+                        line
+                            .map((char) => Message.charToString(char))
+                            .join('') +
+                        ' #\n',
+                )
+                .join('') +
+            '#=' +
+            '='.repeat(BOARD_LINE_LENGTH * 2) +
+            '=#\n'
+        );
+    }
+
+    /**
+     * Write a text on your new message. If your message is not empty it will continue
+     * where you last left off (`position: MessageWritePosition.CURRENT`). Alternatively
+     * you can continue on the next line or give an exact position.
+     *
+     * @param text
+     * @param options
+     */
+    write(text: string, options: MessageWriteOptions = {}): this {
+        // Cursor blow board length? Just return…
+        if (!this.board[this.cursor[0]]) {
+            return this;
+        }
+
+        // Add new line if NEXT_LINE is set (except it's already in the first line)
+        if (
+            options.position === MessageWritePosition.NEXT_LINE &&
+            (this.cursor[0] !== 0 || this.cursor[1] !== 0)
+        ) {
+            this.cursor[0]++;
+            this.cursor[1] = 0;
+        }
+
+        // Set cursor to given position
+        else if (typeof options.position === 'object') {
+            this.cursor[0] = options.position.line;
+            this.cursor[1] = options.position.row || 0;
+        }
+
+        // Add space before text as it
+        // will be rendered in the same line
+        if (
+            (options.position === undefined ||
+                options.position === MessageWritePosition.CURRENT) &&
+            this.cursor[1] !== 0 &&
+            this.cursor[1] < BOARD_LINE_LENGTH - 1
+        ) {
+            this.board[this.cursor[0]].splice(this.cursor[1], 1, 0);
+            this.cursor[1] += 1;
+        }
+
+        // Figure out left indent
+        let indent = 0;
+        if (options.indent === true) {
+            indent = this.cursor[1];
+        } else if (
+            typeof options.indent === 'number' &&
+            options.indent >= 0 &&
+            options.indent <= BOARD_LINE_LENGTH - 5
+        ) {
+            indent = options.indent;
+        }
+
+        const linesOfText = text.split('\n');
+        let isFirstLine = true;
+        for (const lineOfText of linesOfText) {
+            const chars = Message.string2chars(lineOfText, options);
+            const charsLeftInLine: [number, number] = [
+                BOARD_LINE_LENGTH - this.cursor[1],
+                BOARD_LINE_LENGTH - indent,
+            ];
+
+            if (!isFirstLine) {
+                this.cursor[0]++;
+                this.cursor[1] = indent;
+            }
+
+            if (
+                typeof options.position === 'object' &&
+                options.position.width
+            ) {
+                charsLeftInLine[0] = Math.min(
+                    charsLeftInLine[0],
+                    options.position.width,
+                );
+                charsLeftInLine[1] = Math.min(
+                    charsLeftInLine[1],
+                    options.position.width - indent,
+                );
+            }
+
+            const linesOfChars = Message.splitCharsIntoLines(
+                chars,
+                charsLeftInLine,
+            );
+            for (const chars of linesOfChars) {
+                // Board is over, skip line…
+                if (!this.board[this.cursor[0]]) {
+                    break;
+                }
+
+                // Add chars to current line and update cursor
+                this.board[this.cursor[0]].splice(
+                    this.cursor[1],
+                    chars.length,
+                    ...chars,
+                );
+                this.cursor[1] += chars.length;
+
+                // Add new line (and update cursor),
+                // if this wasn't the last line
+                if (chars !== linesOfChars[linesOfChars.length - 1]) {
+                    this.cursor[0]++;
+                    this.cursor[1] = indent;
+                }
+            }
+
+            isFirstLine = false;
+        }
+
+        return this;
     }
 }

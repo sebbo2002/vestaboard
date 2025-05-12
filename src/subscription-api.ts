@@ -1,41 +1,51 @@
+import type {
+    SubscriptionPostResponse,
+    Subscriptions,
+    Viewer,
+} from './types.js';
+import type { RequestOptions } from './types.js';
+
 import Message from './message.js';
 import { request } from './tools.js';
-import type { SubscriptionPostResponse, Subscriptions, Viewer } from './types.js';
-import type { RequestOptions } from './types.js';
 
 export default class SubscriptionAPI {
     private readonly key: string;
-    private readonly secret: string;
     private readonly options: RequestOptions;
+    private readonly secret: string;
 
-    constructor (key: string, secret: string, options?: RequestOptions) {
+    constructor(key: string, secret: string, options?: RequestOptions) {
         this.key = key;
         this.secret = secret;
         this.options = options || {};
     }
 
-    private async request<T> (path: string, data?: Record<string, unknown>): Promise<T> {
-        return request(`https://platform.vestaboard.com${path}`, {
-            'X-Vestaboard-Api-Key': this.key,
-            'X-Vestaboard-Api-Secret': this.secret
-        }, data, this.options);
-    }
-
-    async getViewer (): Promise<Viewer> {
-        return await this.request<Viewer>('/viewer');
-    }
-
-    async getSubscriptions (): Promise<Subscriptions> {
+    async getSubscriptions(): Promise<Subscriptions> {
         return await this.request<Subscriptions>('/subscriptions');
     }
 
-    async postMessage (message: Message | string): Promise<SubscriptionPostResponse[]>;
-    async postMessage (message: Message | string, subscriptionId: string): Promise<SubscriptionPostResponse>;
-    async postMessage (message: Message | string, subscriptionIds: string[]): Promise<SubscriptionPostResponse[]>;
-    async postMessage (message: Message | string, subscriptionIds?: string | string[]) {
+    async getViewer(): Promise<Viewer> {
+        return await this.request<Viewer>('/viewer');
+    }
+
+    async postMessage(
+        message: Message | string,
+    ): Promise<SubscriptionPostResponse[]>;
+    async postMessage(
+        message: Message | string,
+        subscriptionId: string,
+    ): Promise<SubscriptionPostResponse>;
+    async postMessage(
+        message: Message | string,
+        subscriptionIds: string[],
+    ): Promise<SubscriptionPostResponse[]>;
+    async postMessage(
+        message: Message | string,
+        subscriptionIds?: string | string[],
+    ) {
         let singleMode = false;
         const ids: string[] = [];
-        const msgObj = typeof message === 'string' ? new Message(message) : message;
+        const msgObj =
+            typeof message === 'string' ? new Message(message) : message;
 
         if (typeof subscriptionIds === 'string') {
             singleMode = true;
@@ -44,15 +54,22 @@ export default class SubscriptionAPI {
             ids.push(...subscriptionIds);
         } else {
             const subscriptions = await this.getSubscriptions();
-            ids.push(...subscriptions.subscriptions.map(subscription => subscription._id));
+            ids.push(
+                ...subscriptions.subscriptions.map(
+                    (subscription) => subscription._id,
+                ),
+            );
         }
 
         const results: SubscriptionPostResponse[] = [];
         for (const id of ids) {
             results.push(
-                await this.request<SubscriptionPostResponse>(`/subscriptions/${id}/message`, {
-                    characters: msgObj.toCharArray()
-                })
+                await this.request<SubscriptionPostResponse>(
+                    `/subscriptions/${id}/message`,
+                    {
+                        characters: msgObj.toCharArray(),
+                    },
+                ),
             );
         }
         if (singleMode) {
@@ -60,5 +77,19 @@ export default class SubscriptionAPI {
         }
 
         return results;
+    }
+    private async request<T>(
+        path: string,
+        data?: Record<string, unknown>,
+    ): Promise<T> {
+        return request(
+            `https://platform.vestaboard.com${path}`,
+            {
+                'X-Vestaboard-Api-Key': this.key,
+                'X-Vestaboard-Api-Secret': this.secret,
+            },
+            data,
+            this.options,
+        );
     }
 }

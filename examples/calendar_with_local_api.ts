@@ -1,10 +1,10 @@
-import { Message, LocalAPI } from '../src/index.js';
+import { LocalAPI, Message } from '../src/index.js';
 
 const api = new LocalAPI('*** LOCAL KEY ***', 'vestaboard.local');
 const msg = new Message().table([
     ['now', 'Daily'],
     ['13:00', 'Super Secret Meeting'],
-    ['16:30', 'Awesome Presentation']
+    ['16:30', 'Awesome Presentation'],
 ]);
 
 api.postMessage(msg)
@@ -12,6 +12,6 @@ api.postMessage(msg)
         console.log('Message posted on board:');
         console.log(msg.toString());
     })
-    .catch(error => {
+    .catch((error) => {
         console.error(error);
     });

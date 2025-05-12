@@ -17,24 +17,24 @@ import { Message, MessageWritePosition, ReadWriteAPI } from '../src/index.js';
 const msg = new Message();
 const api = new ReadWriteAPI('*** API KEY ***');
 
-msg.write('13:00', {position: MessageWritePosition.NEXT_LINE});
-msg.write('Daily', {indent: true});
+msg.write('13:00', { position: MessageWritePosition.NEXT_LINE });
+msg.write('Daily', { indent: true });
 
-msg.write('', {position: MessageWritePosition.NEXT_LINE});
+msg.write('', { position: MessageWritePosition.NEXT_LINE });
 
-msg.write('18:00', {position: MessageWritePosition.NEXT_LINE});
-msg.write('Fischstäbchen, Spinat & Ei', {indent: true});
+msg.write('18:00', { position: MessageWritePosition.NEXT_LINE });
+msg.write('Fischstäbchen, Spinat & Ei', { indent: true });
 
-msg.write('', {position: MessageWritePosition.NEXT_LINE});
+msg.write('', { position: MessageWritePosition.NEXT_LINE });
 
-msg.write('20:00', {position: MessageWritePosition.NEXT_LINE});
-msg.write('Sandmännchen', {indent: true});
+msg.write('20:00', { position: MessageWritePosition.NEXT_LINE });
+msg.write('Sandmännchen', { indent: true });
 
 api.postMessage(msg)
     .then(() => {
         console.log('Message posted on board:');
         console.log(msg.toString());
     })
-    .catch(error => {
+    .catch((error) => {
         console.error(error);
     });
