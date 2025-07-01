@@ -1,17 +1,47 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="1143" lines-covered="1112" line-rate="0.9728" branches-valid="220" branches-covered="207" branch-rate="0.9409000000000001" timestamp="1750833949585" complexity="0" version="0.1">
+<coverage lines-valid="1143" lines-covered="1112" line-rate="0.9728" branches-valid="292" branches-covered="258" branch-rate="0.8835" timestamp="1751380450607" complexity="0" version="0.1">
   <sources>
     <source>/home/runner/work/vestaboard/vestaboard</source>
   </sources>
   <packages>
-    <package name="main" line-rate="0.9728" branch-rate="0.9409000000000001">
+    <package name="main" line-rate="0.9728" branch-rate="0.8835">
       <classes>
-        <class name="local-api.ts" filename="src/local-api.ts" line-rate="1" branch-rate="0.8">
+        <class name="local-api.ts" filename="src/local-api.ts" line-rate="1" branch-rate="0.75">
           <methods>
             <method name="__name" hits="1" signature="()V">
               <lines>
-                <line number="3" hits="1"/>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__export" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__copyProps" hits="2" signature="()V">
+              <lines>
+                <line number="1" hits="2"/>
+              </lines>
+            </method>
+            <method name="get" hits="6" signature="()V">
+              <lines>
+                <line number="1" hits="6"/>
+              </lines>
+            </method>
+            <method name="__toESM" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__toCommonJS" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="default" hits="3" signature="()V">
+              <lines>
+                <line number="1" hits="3"/>
               </lines>
             </method>
             <method name="&lt;instance_members_initializer&gt;" hits="3" signature="()V">
@@ -46,9 +76,9 @@
             </method>
           </methods>
           <lines>
-            <line number="1" hits="1" branch="false"/>
+            <line number="1" hits="3" branch="true" condition-coverage="72.72727272727273% (8/11)"/>
             <line number="2" hits="1" branch="false"/>
-            <line number="3" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="3" hits="1" branch="false"/>
             <line number="4" hits="1" branch="false"/>
             <line number="5" hits="1" branch="false"/>
             <line number="6" hits="1" branch="true" condition-coverage="100% (2/2)"/>
@@ -96,11 +126,46 @@
             <line number="48" hits="1" branch="false"/>
           </lines>
         </class>
-        <class name="message.ts" filename="src/message.ts" line-rate="0.9895999999999999" branch-rate="0.9695999999999999">
+        <class name="message.ts" filename="src/message.ts" line-rate="0.9895999999999999" branch-rate="0.955">
           <methods>
             <method name="__name" hits="1" signature="()V">
               <lines>
                 <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__export" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__copyProps" hits="2" signature="()V">
+              <lines>
+                <line number="1" hits="2"/>
+              </lines>
+            </method>
+            <method name="get" hits="268" signature="()V">
+              <lines>
+                <line number="1" hits="268"/>
+              </lines>
+            </method>
+            <method name="__toESM" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__toCommonJS" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="CHAR_MAP" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="default" hits="267" signature="()V">
+              <lines>
+                <line number="1" hits="267"/>
               </lines>
             </method>
             <method name="&lt;instance_members_initializer&gt;" hits="43" signature="()V">
@@ -185,7 +250,7 @@
             </method>
           </methods>
           <lines>
-            <line number="1" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="1" hits="1" branch="true" condition-coverage="84.61538461538461% (11/13)"/>
             <line number="2" hits="1" branch="false"/>
             <line number="3" hits="1" branch="false"/>
             <line number="4" hits="1" branch="false"/>
@@ -954,14 +1019,44 @@
             <line number="767" hits="55" branch="false"/>
             <line number="768" hits="55" branch="true" condition-coverage="100% (1/1)"/>
             <line number="769" hits="55" branch="false"/>
-            <line number="770" hits="1" branch="false"/>
+            <line number="770" hits="1" branch="true" condition-coverage="0% (0/1)"/>
           </lines>
         </class>
-        <class name="multiple-boards.ts" filename="src/multiple-boards.ts" line-rate="0.2" branch-rate="0.6666">
+        <class name="multiple-boards.ts" filename="src/multiple-boards.ts" line-rate="0.2" branch-rate="0.6363">
           <methods>
             <method name="__name" hits="1" signature="()V">
               <lines>
                 <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__export" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__copyProps" hits="2" signature="()V">
+              <lines>
+                <line number="1" hits="2"/>
+              </lines>
+            </method>
+            <method name="get" hits="0" signature="()V">
+              <lines>
+                <line number="1" hits="0"/>
+              </lines>
+            </method>
+            <method name="__toESM" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__toCommonJS" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="default" hits="0" signature="()V">
+              <lines>
+                <line number="1" hits="0"/>
               </lines>
             </method>
             <method name="&lt;static_initializer&gt;" hits="1" signature="()V">
@@ -976,7 +1071,7 @@
             </method>
           </methods>
           <lines>
-            <line number="1" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="1" hits="1" branch="true" condition-coverage="66.66666666666666% (6/9)"/>
             <line number="2" hits="1" branch="false"/>
             <line number="3" hits="1" branch="false"/>
             <line number="4" hits="1" branch="true" condition-coverage="50% (1/2)"/>
@@ -998,11 +1093,41 @@
             <line number="20" hits="0" branch="false"/>
           </lines>
         </class>
-        <class name="read-write-api.ts" filename="src/read-write-api.ts" line-rate="1" branch-rate="0.7777">
+        <class name="read-write-api.ts" filename="src/read-write-api.ts" line-rate="1" branch-rate="0.7368000000000001">
           <methods>
             <method name="__name" hits="1" signature="()V">
               <lines>
-                <line number="3" hits="1"/>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__export" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__copyProps" hits="2" signature="()V">
+              <lines>
+                <line number="1" hits="2"/>
+              </lines>
+            </method>
+            <method name="get" hits="3" signature="()V">
+              <lines>
+                <line number="1" hits="3"/>
+              </lines>
+            </method>
+            <method name="__toESM" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__toCommonJS" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="default" hits="2" signature="()V">
+              <lines>
+                <line number="1" hits="2"/>
               </lines>
             </method>
             <method name="&lt;instance_members_initializer&gt;" hits="2" signature="()V">
@@ -1037,9 +1162,9 @@
             </method>
           </methods>
           <lines>
-            <line number="1" hits="1" branch="false"/>
+            <line number="1" hits="2" branch="true" condition-coverage="72.72727272727273% (8/11)"/>
             <line number="2" hits="1" branch="false"/>
-            <line number="3" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="3" hits="1" branch="false"/>
             <line number="4" hits="1" branch="false"/>
             <line number="5" hits="1" branch="false"/>
             <line number="6" hits="1" branch="true" condition-coverage="100% (2/2)"/>
@@ -1075,11 +1200,41 @@
             <line number="36" hits="1" branch="false"/>
           </lines>
         </class>
-        <class name="subscription-api.ts" filename="src/subscription-api.ts" line-rate="0.9262999999999999" branch-rate="0.8571">
+        <class name="subscription-api.ts" filename="src/subscription-api.ts" line-rate="0.9262999999999999" branch-rate="0.7916">
           <methods>
             <method name="__name" hits="1" signature="()V">
               <lines>
-                <line number="8" hits="1"/>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__export" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__copyProps" hits="2" signature="()V">
+              <lines>
+                <line number="1" hits="2"/>
+              </lines>
+            </method>
+            <method name="get" hits="5" signature="()V">
+              <lines>
+                <line number="1" hits="5"/>
+              </lines>
+            </method>
+            <method name="__toESM" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__toCommonJS" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="default" hits="4" signature="()V">
+              <lines>
+                <line number="1" hits="4"/>
               </lines>
             </method>
             <method name="&lt;instance_members_initializer&gt;" hits="4" signature="()V">
@@ -1119,14 +1274,14 @@
             </method>
           </methods>
           <lines>
-            <line number="1" hits="1" branch="false"/>
+            <line number="1" hits="4" branch="true" condition-coverage="72.72727272727273% (8/11)"/>
             <line number="2" hits="1" branch="false"/>
             <line number="3" hits="1" branch="false"/>
             <line number="4" hits="1" branch="false"/>
             <line number="5" hits="1" branch="false"/>
             <line number="6" hits="1" branch="false"/>
             <line number="7" hits="1" branch="false"/>
-            <line number="8" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="8" hits="1" branch="false"/>
             <line number="9" hits="1" branch="false"/>
             <line number="10" hits="1" branch="false"/>
             <line number="11" hits="1" branch="true" condition-coverage="100% (2/2)"/>
@@ -1216,11 +1371,36 @@
             <line number="95" hits="1" branch="false"/>
           </lines>
         </class>
-        <class name="tools.ts" filename="src/tools.ts" line-rate="1" branch-rate="0.9444">
+        <class name="tools.ts" filename="src/tools.ts" line-rate="1" branch-rate="0.88">
           <methods>
             <method name="__name" hits="1" signature="()V">
               <lines>
-                <line number="7" hits="1"/>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__export" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__copyProps" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="get" hits="12" signature="()V">
+              <lines>
+                <line number="1" hits="12"/>
+              </lines>
+            </method>
+            <method name="__toCommonJS" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="request" hits="12" signature="()V">
+              <lines>
+                <line number="1" hits="12"/>
               </lines>
             </method>
             <method name="request" hits="12" signature="()V">
@@ -1230,13 +1410,13 @@
             </method>
           </methods>
           <lines>
-            <line number="1" hits="1" branch="false"/>
+            <line number="1" hits="12" branch="true" condition-coverage="85.71428571428571% (6/7)"/>
             <line number="2" hits="1" branch="false"/>
             <line number="3" hits="1" branch="false"/>
             <line number="4" hits="1" branch="false"/>
             <line number="5" hits="1" branch="false"/>
             <line number="6" hits="1" branch="false"/>
-            <line number="7" hits="12" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="7" hits="12" branch="true" condition-coverage="50% (1/2)"/>
             <line number="8" hits="12" branch="false"/>
             <line number="9" hits="12" branch="false"/>
             <line number="10" hits="12" branch="false"/>
@@ -1282,18 +1462,58 @@
             <line number="50" hits="12" branch="false"/>
           </lines>
         </class>
-        <class name="types.ts" filename="src/types.ts" line-rate="1" branch-rate="1">
+        <class name="types.ts" filename="src/types.ts" line-rate="1" branch-rate="0.7333">
           <methods>
+            <method name="__export" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="__copyProps" hits="4" signature="()V">
+              <lines>
+                <line number="1" hits="4"/>
+              </lines>
+            </method>
+            <method name="get" hits="296" signature="()V">
+              <lines>
+                <line number="1" hits="296"/>
+              </lines>
+            </method>
+            <method name="__toESM" hits="3" signature="()V">
+              <lines>
+                <line number="1" hits="3"/>
+              </lines>
+            </method>
+            <method name="__toCommonJS" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="BOARD_LINES" hits="1" signature="()V">
+              <lines>
+                <line number="1" hits="1"/>
+              </lines>
+            </method>
+            <method name="BOARD_LINE_LENGTH" hits="206" signature="()V">
+              <lines>
+                <line number="1" hits="206"/>
+              </lines>
+            </method>
+            <method name="MessageWritePosition" hits="89" signature="()V">
+              <lines>
+                <line number="1" hits="89"/>
+              </lines>
+            </method>
           </methods>
           <lines>
-            <line number="1" hits="1" branch="false"/>
+            <line number="1" hits="1" branch="true" condition-coverage="76.92307692307693% (10/13)"/>
             <line number="2" hits="1" branch="false"/>
             <line number="3" hits="1" branch="false"/>
             <line number="4" hits="1" branch="false"/>
             <line number="5" hits="1" branch="false"/>
             <line number="6" hits="1" branch="false"/>
             <line number="7" hits="1" branch="false"/>
-            <line number="8" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="8" hits="1" branch="true" condition-coverage="50% (1/2)"/>
             <line number="9" hits="1" branch="false"/>
             <line number="10" hits="1" branch="false"/>
             <line number="11" hits="1" branch="false"/>
