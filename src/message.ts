@@ -415,12 +415,12 @@ export default class Message {
             // no space for the word, write into next line
             else if (word.length <= lineLength[1]) {
                 currentLine = [...word];
-                charsLeft = lineLength[1];
+                // charsLeft = lineLength[1];
                 lines.push(currentLine);
             }
 
-            // word too long for one line, start in
-            // current line and continue in next line
+            // word too long for one line, start in the
+            // current line and continue in the next line
             else {
                 if (charsLeft >= 3 && !currentLine.length) {
                     // No space required in front of long word
